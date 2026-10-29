@@ -1,0 +1,104 @@
+pinsel 1 800 600
+seed 7
+licht oben-links kraft 0.45
+farbe wasser 1d5a62
+farbe blatt 3f8a3a
+hintergrund 0c2a32
+
+; teichgrund
+rechteck 0 0 800 600 radial 2c7a7a 18505a 0b2830 flach
+vorlage kiesel
+  ellipse 0 0 5+z*9 4+z*6 farbe 6e6a52+z*25 drehung z*180 deckkraft 0.35 weich 1.5 flach
+streue kiesel 220 bereich 0 0 800 600
+vorlage alge
+  linie 0,0 8,-14 4,-30 12,-46 breite 3..1 farbe 2e6a40 deckkraft 0.35 weich 1 drehung z*360
+streue alge 25 bereich 0 0 800 600
+rechteck 0 0 800 600 farbe wasser deckkraft 0.35 flach
+
+; lichtnetz an der oberflaeche
+vorlage glanz
+  linie -40,0 -18,-8 4,2 26,-6 44,2 breite 1.2 farbe c8f4ee deckkraft 0.1 weich 1.5 drehung z*180
+streue glanz 70 bereich 0 0 800 600
+ellipse 300 160 380 70 farbe d8f4ff weich 50 deckkraft 0.12 drehung -25 flach
+
+; koi in draufsicht, kopf nach rechts, k biegt den koerper
+vorlage koi c1=ffffff c2=ff7020 k=0
+  form 62,10 56,0+k*0.85 40,-6+k*0.36 15,-7 -15,-1+k*0.25 -35,5+k*0.81 -42,10+k*1.08 -35,15+k*0.81 -15,21+k*0.25 15,27 40,26+k*0.36 56,20+k*0.85 farbe 041a20 weich 7 deckkraft 0.45 flach
+  form -48,0+k*0.92 -80,-22+k*2.56 -94,-20+k*3.4 -84,0+k*2.82 -94,20+k*3.4 -80,22+k*2.56 farbe c2 deckkraft 0.7
+    linie -50,0+k*0.9 -92,-16+k*3.3 breite 1 farbe c2-25
+    linie -50,0+k*0.9 -86,0+k*2.9 breite 1 farbe c2-25
+    linie -50,0+k*0.9 -92,16+k*3.3 breite 1 farbe c2-25
+  form 24,-12+k*0.2 8,-34+k*0.1 -4,-30 12,-11 farbe c2 deckkraft 0.65
+  form 24,12+k*0.2 8,34+k*0.1 -4,30 12,11 farbe c2 deckkraft 0.65
+  form 52,0+k*1.08 46,-10+k*0.85 30,-16+k*0.36 5,-17 -25,-11+k*0.25 -45,-5+k*0.81 -52,0+k*1.08 -45,5+k*0.81 -25,11+k*0.25 5,17 30,16+k*0.36 46,10+k*0.85 farbe c2 textur punkte 4 texturfarbe c2-12
+    ellipse 18 -5+k*0.13 17 10 farbe c1 drehung 10
+    ellipse -16 6+k*0.1 13 8 farbe c1 drehung -15
+    ellipse -38 -2+k*0.6 8 5 farbe c1
+    linie -44,k*0.8 -20,k*0.16 10,0 36,k*0.5 breite 3 farbe c2-20 deckkraft 0.5
+  kreis 44 -7+k*0.77 2.2 farbe 101010 flach
+  kreis 44 7+k*0.77 2.2 farbe 101010 flach
+  linie 51,-3+k*1 56,-6+k*1.2 breite 1 farbe c2-30
+  linie 51,3+k*1 56,6+k*1.2 breite 1 farbe c2-30
+
+; seerosenblatt mit kerbe
+vorlage blatt r=50 c=blatt
+  form 3,6 r*cos(20)+3,r*sin(20)+6 r*cos(55)+3,r*sin(55)+6 r*cos(90)+3,r*sin(90)+6 r*cos(125)+3,r*sin(125)+6 r*cos(160)+3,r*sin(160)+6 r*cos(195)+3,r*sin(195)+6 r*cos(230)+3,r*sin(230)+6 r*cos(265)+3,r*sin(265)+6 r*cos(300)+3,r*sin(300)+6 r*cos(335)+3,r*sin(335)+6 farbe 041a20 weich 6 deckkraft 0.5 flach
+  form 0,0! r*cos(14),r*sin(14) r*cos(50),r*sin(50) r*cos(90),r*sin(90) r*cos(125),r*sin(125) r*cos(160),r*sin(160) r*cos(195),r*sin(195) r*cos(230),r*sin(230) r*cos(265),r*sin(265) r*cos(300),r*sin(300) r*cos(340),r*sin(340) radial c+15 c c-15 rand c-30 1.5
+    wiederhole i 9
+      linie 0,0 cos(30+i*37)*r,sin(30+i*37)*r breite 1.5..0.5 farbe c+20 deckkraft 0.6
+    kreis r*0.4 r*0.3 r*0.25 farbe c-25 deckkraft 0.25 weich 4 flach
+    kreis -r*0.5 -r*0.2 r*0.18 farbe a07a30 deckkraft 0.25 weich 3 flach
+  kreis 0 0 2.5 farbe c+30 flach
+
+; steine am rand
+form -20,-20 260,-20 230,30 160,60 90,110 40,170 -20,200 ecken farbe 1a2a24 flach
+vorlage stein c=7a7468
+  form -30,0 -22,-18 0,-26 24,-20 32,-2 22,16 -4,20 -24,14 radial c+15 c c-25 schatten
+    ellipse -8 -18 18 8 farbe 4a7a34 deckkraft 0.7 textur punkte 6 texturfarbe 6a9a40
+nutze stein 30 30 skala 1.8
+nutze stein 120 18 skala 1.3 c=8a8274
+nutze stein 200 4 skala 1.2 c=6e6a5e
+nutze stein 20 120 skala 1.4 c=8a8274
+nutze stein 80 75 skala 1 c=6a645a
+form 600,620 680,560 760,520 820,500 820,620 ecken farbe 1a2a24 flach
+nutze stein 760 560 skala 1.9 c=8a8274
+nutze stein 680 600 skala 1.4
+nutze stein 790 470 skala 1 c=6e6a5e
+
+; kois
+nutze koi 320 245 drehung 25 k=8 skala 1.35
+nutze koi 510 420 drehung 200 k=-10 skala 1.35 c1=e8361a c2=fbf6ee
+nutze koi 210 420 drehung -55 k=6 c1=1a1a1a c2=ffb020 skala 1.15
+
+; ringe im wasser
+kreis 430 300 30 rand e0fff8 1.2 deckkraft 0.3 flach
+kreis 430 300 48 rand e0fff8 1 deckkraft 0.18 flach
+kreis 430 300 68 rand e0fff8 0.8 deckkraft 0.1 flach
+
+; seerosen
+nutze blatt 620 160 r=70 drehung 30
+nutze blatt 720 70 r=55 drehung 160 c=4a9440
+nutze blatt 520 70 r=42 drehung 260 c=3a7e38
+nutze blatt 690 260 r=48 drehung 300 c=468e3c
+nutze blatt 110 520 r=60 drehung 120 c=4a9440
+nutze blatt 210 560 r=38 drehung 210
+nutze blatt 750 340 r=30 drehung 80 c=3a7e38
+
+; bluete
+teil bluete 612 152 skala 1.35
+  kreis 4 8 46 farbe 041a20 weich 8 deckkraft 0.4 flach
+  wiederhole i 9
+    ellipse cos(i*40)*24 sin(i*40)*24 26 10 drehung i*40 verlauf fff4f6 f08aa8 0 rand d86a8a 1
+  wiederhole i 8
+    ellipse cos(i*45+20)*16 sin(i*45+20)*16 19 8 drehung i*45+20 verlauf fffafb f5a8c0 0 rand e07a98 1
+  wiederhole i 6
+    ellipse cos(i*60+10)*8 sin(i*60+10)*8 11 5 drehung i*60+10 farbe fff0f4 rand f0a0b8 0.8
+  kreis 0 0 7 radial ffe060 e0a020
+  wiederhole i 10
+    kreis cos(i*36)*9 sin(i*36)*9 1.6 farbe f0b020 flach
+
+; tropfen auf den blaettern
+kreis 560 205 4 radial ffffff 9ad0a0 deckkraft 0.8
+kreis 690 290 3 radial ffffff 9ad0a0 deckkraft 0.8
+kreis 90 500 5 radial ffffff 9ad0a0 deckkraft 0.8
+kreis 735 95 3 radial ffffff 9ad0a0 deckkraft 0.8

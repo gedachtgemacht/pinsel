@@ -1,0 +1,71 @@
+pinsel 1 800 600
+stil aquarell
+seed 9
+licht oben-links kraft 0.4
+farbe wand d6b98e
+farbe kuehl 7f95ad
+farbe katze dd944e
+farbe holz efe3cb
+farbe dunkel 4a4563
+
+; innenwand, warm
+hintergrund verlauf wand+5 wand-20 90
+
+; draussen: kuehler regentag, grosses fenster, oben und rechts angeschnitten
+rechteck 70 -20 760 495 verlauf e2e7ea b6c3d0 93a5b8 90 flach
+  ; gegenueber: haeuser und ein baum, nur als nasse flecken
+  form 70,290! 170,200! 270,265! 270,480! 70,480! farbe kuehl-10 deckkraft 0.7 weich 6
+  form 560,250! 640,185! 730,240! 830,230! 830,480! 560,480! farbe kuehl-5 deckkraft 0.6 weich 6
+  kreis 390 250 105 farbe kuehl-20 deckkraft 0.6 weich 14
+  kreis 470 310 75 farbe kuehl-15 deckkraft 0.55 weich 14
+  linie 395,480 398,340 breite 12..5 farbe kuehl-30 deckkraft 0.5 weich 4
+  ; ein warmes fenster drueben, klein
+  rechteck 660 290 16 22 farbe ffd27e deckkraft 1 weich 1
+  rechteck 696 290 16 22 farbe ffd27e deckkraft 0.85 weich 1
+  ; regen: feine schraege striche, alle gleich gerichtet
+  wiederhole i 90
+    linie 450+sin(i*137)*380,210+sin(i*71)*200 442+sin(i*137)*380,240+sin(i*71)*200+sin(i*13)*10 breite 1 farbe ffffff deckkraft 0.45
+  ; tropfen am glas
+  wiederhole i 22
+    linie 450+sin(i*53)*360,200+sin(i*29)*170 451+sin(i*53)*360,212+sin(i*29)*170+sin(i*7)*12 breite 3..1.5 farbe ffffff deckkraft 0.55
+
+; fensterrahmen: linke kante und ein pfosten rechts vom blickpunkt
+rechteck 52 -20 22 500 farbe holz flach
+rechteck 588 -20 18 500 farbe holz flach
+rechteck 52 -20 800 18 farbe holz flach
+
+; fensterbank, breit
+rechteck 20 470 800 18 farbe holz flach
+rechteck 20 488 800 14 farbe holz-18 flach
+rechteck 20 502 800 22 farbe wand-40 deckkraft 0.5 weich 8 flach
+
+; katze, eingerollt, schlaeft
+teil katze 330 472 skala 1.2
+  ellipse 0 2 170 9 farbe dunkel deckkraft 0.3 weich 6 flach
+  ; koerper: rund, nicht lang
+  form -120,0 -118,-55 -70,-100 10,-116 85,-104 135,-66 152,-24 140,0 farbe katze
+    ; schattenseite unten rechts
+    ellipse 80 -5 120 45 farbe katze-30 deckkraft 0.5 weich 16
+    ; kuehles fensterlicht auf dem ruecken
+    linie -95,-72 -20,-98 60,-96 125,-64 breite 16 farbe fbf3e4 deckkraft 0.75 weich 6
+    ; tigerstreifen, nur wenige
+    linie -20,-112 -12,-82 breite 9..2 farbe katze-32 deckkraft 0.35
+    linie 30,-114 40,-84 breite 9..2 farbe katze-32 deckkraft 0.35
+    linie 80,-100 86,-72 breite 8..2 farbe katze-32 deckkraft 0.3
+    linie 122,-74 124,-50 breite 6..2 farbe katze-32 deckkraft 0.25
+  ; schwanz kommt hinten heraus und legt sich vorn um die pfoten
+  linie 140,-6 90,-18 30,-22 -30,-28 -62,-42 breite 1.5 farbe katze-40 deckkraft 0.35
+  linie 148,-2 95,-6 30,-10 -30,-16 -66,-34 breite 18..5 farbe katze-6
+    linie 70,-16 74,4 breite 4 farbe katze-32 deckkraft 0.45
+    linie 10,-22 14,0 breite 4 farbe katze-32 deckkraft 0.45
+  ; kopf liegt auf den pfoten
+  form -170,0 -180,-38 -157,-72 -110,-80 -70,-60 -63,-15 -95,4 farbe katze+4
+    ellipse -125 -14 50 20 farbe katze+28 deckkraft 0.6 weich 10
+    ellipse -95 -40 30 30 farbe katze-20 deckkraft 0.3 weich 10
+  form -161,-62! -171,-102! -135,-78! farbe katze-5
+  form -110,-78! -96,-112! -76,-70! farbe katze-8
+  form -159,-68! -165,-90! -143,-76! farbe e7a596 deckkraft 0.55
+  ellipse -128 2 24 9 farbe katze+22
+  ; geschlossenes auge, nase
+  linie -148,-40 -138,-35 -128,-40 breite 2 farbe dunkel
+  kreis -172 -24 3 farbe c27474

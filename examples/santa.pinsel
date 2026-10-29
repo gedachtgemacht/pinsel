@@ -1,0 +1,88 @@
+pinsel 1 800 600
+style watercolor
+seed 12
+light top-right strength 0.35
+
+color red c3302c
+color fur f6f2ea
+color night 3e4a78
+color glow f1c06a
+color fir 34525c
+color snow cfcbe2
+
+; sky: three wet bands that bleed into each other
+rect 0 0 800 200 wet gradient night 5f6493 90
+rect 0 160 800 140 wet gradient 8f84ad d9a9a0 90
+rect 0 260 800 90 wet gradient e6b48e f3dcc0 90
+
+; distant hills and forest
+shape 0,330 160,300 340,318 520,296 700,312 800,300 800,380! 0,380! wet color 9a98bd opacity 0.75
+template fir h=40
+  shape 0,-h! h*0.3,0! -h*0.3,0! color fir+z*20 corners
+scatter fir 45 along 0,345 260,335 520,340 800,332 scale 0.5..1.1 depth seed 4
+
+; snowy ground with shadows
+shape 0,380 300,372 560,385 800,376 800,600! 0,600! wet color snow opacity 0.5
+shape 520,492 420,500 300,506 250,500 330,488 460,484 wet color 8e89b8 opacity 0.6
+ellipse 180 432 130 14 wet color glow opacity 0.45
+
+; house with a warm window
+part house 190 405
+  rect -62 -52 124 72 color 4c4260
+  shape -74,-50! 0,-104! 74,-50! color 3d3550 corners
+  shape -80,-52! 0,-110! 80,-52! 72,-44 0,-94 -72,-44 color fur
+  rect 32 -90 12 26 color 3d3550
+  shape 30,-92 38,-100 46,-92 38,-88 color fur
+  circle -26 -16 40 wet radial glow glow+30 opacity 0.7
+  circle 30 -16 30 wet radial glow glow+30 opacity 0.5
+  rect -40 -32 28 28 color glow+20
+  rect 18 -30 22 24 color glow
+  line -26,-32 -26,-4 width 2 color 4c4260
+  line -40,-18 -12,-18 width 2 color 4c4260
+
+; footprints
+repeat i 7
+  ellipse 760-i*28+(i%2)*6 572-i*11 9 4 wet color 9c97c2 opacity 0.7
+
+; santa claus
+part santa 560 490 scale 1.05
+  ; sack behind his back
+  shape 30,-150 85,-196 128,-160 124,-70 80,-44 40,-80 color a77a4c
+  line 95,-190 82,-176 width 7 color 7d5a37
+  ; coat
+  shape -58,-8! 58,-8! 50,-112 36,-162 0,-174 -36,-162 -50,-112 color red
+  shape -50,-112 -36,-162 -14,-170 -20,-110 -26,-12! -58,-8! wet color red-30 opacity 0.6
+  rect -10 -170 20 160 reserve
+  rect -64 -26 128 22 radius 11 reserve
+  ; belt
+  rect -54 -96 108 14 color 2d2626
+  rect -11 -100 22 22 stroke d9b44a 3
+  ; arms
+  line -46,-152 -66,-112 -60,-78 width 28..24 color red
+  line 44,-152 70,-170 92,-186 width 26..22 color red
+  circle -60 -72 12 color 2f5a3a
+  circle 94 -188 12 color 2f5a3a
+  ; boots
+  ellipse -24 -4 22 10 color 2d2626
+  ellipse 24 -4 22 10 color 2d2626
+  ; head
+  circle 0 -206 25 color f0c3a2
+  circle -12 -199 7 wet color e5877a opacity 0.6
+  circle 12 -199 7 wet color e5877a opacity 0.6
+  shape -32,-206 -36,-178 -26,-150 -10,-128 0,-122 10,-128 26,-150 36,-178 32,-206 18,-196 0,-192 -18,-196 color fur
+  shape -2,-198 -16,-202 -26,-194 -14,-190 color fur
+  shape 2,-198 16,-202 26,-194 14,-190 color fur
+  circle 0 -205 5 color e2967f
+  circle -9 -214 2.4 color 2d2626 flat
+  circle 9 -214 2.4 color 2d2626 flat
+  line -14,-222 -4,-221 width 3 color fur
+  line 4,-221 14,-222 width 3 color fur
+  ; hat
+  shape -27,-224! 27,-224! 22,-250 0,-270 -30,-268 -48,-252 color red
+  rect -31 -234 62 15 radius 7 reserve
+  circle -50 -250 10 reserve
+
+; snowflakes
+template flake
+  circle 0 0 1.5+z*2 reserve
+scatter flake 90 area 30 30 740 520 seed 9

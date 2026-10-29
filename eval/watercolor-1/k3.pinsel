@@ -1,0 +1,57 @@
+pinsel 1 800 600
+stil aquarell
+seed 21
+licht links kraft 0.4
+farbe violett 8a86b4
+farbe glut f0b48a
+farbe fuchs c8642e
+farbe nacht 4a4672
+farbe schnee ffffff
+
+; himmel: oben abendviolett, zum horizont glut, viel licht
+hintergrund verlauf violett+42 e4dbe8 f8e0cf glut 90
+
+; ferner waldsaum: niedrig, gezackt, kuehl
+form 0,348 0,322! 30,318! 50,308! 70,320! 110,316! 130,300! 150,316! 210,314! 240,304! 262,316! 330,318! 380,310! 400,298! 418,312! 480,316! 560,312! 590,302! 610,314! 690,316! 740,306! 770,316! 800,314! 800,348 farbe violett deckkraft 0.5 flach
+; kahle baeume links
+linie 120,330 118,270 121,226 breite 3..1 farbe nacht+15 deckkraft 0.6
+linie 119,282 102,262 breite 1.5..0.5 farbe nacht+15 deckkraft 0.5
+linie 120,260 138,240 breite 1.5..0.5 farbe nacht+15 deckkraft 0.5
+linie 152,330 151,284 breite 2..0.8 farbe nacht+15 deckkraft 0.5
+
+; schneefeld: papierweiss, unten kuehler
+form -10,342 200,336 420,344 620,338 810,342 810,610 -10,610 verlauf schnee schnee violett+45 90 deckkraft 0.95 flach
+; warmer abglanz auf dem schnee nahe dem horizont
+linie -10,352 300,348 600,352 810,350 breite 8..3 farbe glut+10 deckkraft 0.45
+
+; schattenmulden, blauviolett
+linie -10,420 160,410 340,422 breite 2..14 farbe violett+30 deckkraft 0.45
+linie 420,392 600,386 810,396 breite 1..10 farbe violett+35 deckkraft 0.35
+linie -10,565 200,552 380,562 600,555 810,568 breite 22..8 farbe violett+25 deckkraft 0.4
+
+; spur: fuehrt von links unten zum fuchs
+wiederhole i 13
+  ellipse 90+i*32+zuf(-3,3)*(i%2) 596-i*8+(i%2)*6 5 3 farbe violett-5 deckkraft 0.6-i*0.02 flach
+
+; langer abendschatten, nach rechts weg vom licht
+form 520,500 640,492 760,500 740,508 620,508 farbe violett+5 deckkraft 0.5 flach
+
+; der fuchs, sitzt, blickt ins letzte licht nach links
+teil fuchs 530 486 skala 1.5
+  ; schwanz um den koerper
+  form 18,12 48,2 76,12 66,24 28,22 farbe fuchs flach
+    form 62,6 80,12 70,26 56,22 farbe glut+20
+  ; koerper
+  form -20,16! -24,-8 -18,-34 -6,-48 8,-44 20,-24 28,0 30,16! farbe fuchs
+    form 10,-40 22,-20 30,10 14,18 farbe fuchs-25 deckkraft 0.5
+  ; brust hell
+  form -25,-4 -21,-32 -12,-44 -14,-18 farbe glut+5 deckkraft 0.8 flach
+  ; kopf mit ohren und schnauze
+  form -4,-46 -6,-62 -4,-78! -14,-66 -22,-76! -24,-62 -40,-56! -26,-48 -14,-44 farbe fuchs
+    form -40,-56! -28,-52 -20,-48 -30,-46 farbe glut+15 deckkraft 0.9
+    form -4,-78! -10,-68 -7,-64 farbe nacht+10
+  kreis -40 -56 1.8 farbe nacht flach
+  kreis -20 -60 1.4 farbe nacht flach
+  ; vorderbeine dunkel
+  linie -16,0 -18,16 breite 4..3 farbe fuchs-45
+  linie -6,2 -8,16 breite 4..3 farbe fuchs-45

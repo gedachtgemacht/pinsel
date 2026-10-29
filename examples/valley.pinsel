@@ -1,0 +1,31 @@
+pinsel 1 800 600
+seed 4
+light top-right strength 0.7
+color rock 6b7480
+color forest 2f5a3a
+background gradient 6fa3d8 f6d7a8 90
+
+circle 640 140 46 color fff1c4 soft 18 flat
+circle 640 140 34 color fff6dc flat
+
+shape 0,420 140,250 260,330 400,190! 560,320 700,230 800,300 800,600! 0,600! color rock+30 soft 1.5
+shape 0,470 180,360 330,420 470,330 640,400 800,360 800,600! 0,600! color rock texture hatch 4
+  shape 360,330 470,330 520,380 420,370 color ffffff
+
+template fir h=90
+  line 0,0 0,-h*0.25 width 6..4 color 4a3424
+  shape 0,-h! h*0.32,-h*0.25! -h*0.32,-h*0.25! color forest+(z*15) texture strokes 6 corners
+
+scatter fir 70 area 0 430 800 90 scale 0.5..1.1 depth seed 3
+
+shape 0,540 300,520 520,560 800,530 800,600! 0,600! color 5d7a3a texture strokes 7
+ellipse 400 575 220 18 color 4f86b8 flat opacity 0.8
+
+part fox 560 548 scale 0.9
+  ellipse 0 -22 34 20 color d4692a shadow
+  line -30,-18 -62,-30 -80,-12 width 16..6 color d4692a
+  circle 30 -44 16 color d4692a
+  shape 22,-56! 30,-74! 38,-56! color d4692a-20
+  shape 34,-54! 44,-70! 46,-50! color d4692a-20
+  shape 40,-40 60,-36 42,-32 color f2e2d0
+  circle 34 -48 2 color 1a1a1a flat

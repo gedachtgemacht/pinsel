@@ -1,0 +1,65 @@
+pinsel 1 800 600
+stil aquarell
+seed 4
+licht links kraft 0.35
+farbe pfirsich f3c9a0
+farbe blau 7f8fb0
+farbe rot b4553e
+farbe dunkel 3e4260
+farbe ocker e2b06a
+
+; himmel: oben kuehl, zum horizont warm, viel papier
+hintergrund verlauf d6e0ec f8f3ec f6dcc0 pfirsich+5 90
+; zwei lockere wolkenstreifen, schraeg und gerissen
+linie 30,160 140,146 290,148 430,156 breite 2..12 farbe blau+30 deckkraft 0.35
+linie 120,172 260,166 360,170 breite 1..6 farbe blau+35 deckkraft 0.3
+linie 470,222 580,212 700,216 breite 8..1 farbe pfirsich-5 deckkraft 0.4
+
+; ferne stadt am kai, flach und blass
+form 0,380! 0,330! 40,330! 40,318! 70,318! 70,334! 110,334! 110,300! 128,286! 146,300! 146,336! 200,336! 200,322! 240,322! 240,340! 330,340! 360,352! 420,360! 420,380! farbe blau+25 deckkraft 0.5 flach
+form 166,336! 166,262! 174,240! 182,262! 182,336! farbe blau+20 deckkraft 0.5 flach
+rechteck 0 368 420 12 farbe blau+5 deckkraft 0.5 flach
+
+; wasser: duenne lasur, warm wo der himmel spiegelt, unten kuehl
+rechteck -10 380 820 230 verlauf f4ece2 blau+48 blau+36 90 deckkraft 0.85 flach
+rechteck -10 380 820 50 verlauf pfirsich+10 pfirsich+30 90 deckkraft 0.3 flach
+
+; spiegelung der stadt: gebrochene, wackelige striche
+wiederhole i 9
+  linie zuf(0,120),384+i*8 zuf(150,260),385+i*8+zuf(-1,1) zuf(280,420),384+i*8 breite 4..1 farbe blau+15 deckkraft 0.35
+
+; glitzer der sonne: wenige warme pinselstriche
+wiederhole i 7
+  linie 590-zuf(20,70),396+i*13 590+zuf(-10,10),397+i*13 590+zuf(20,70),396+i*13 breite 4..1 farbe ocker-5 deckkraft 0.6
+
+; hauptboot: gegen das licht, rechts vom zentrum
+teil boot 500 432
+  form -110,-10! 120,-18! 100,22! -90,22! farbe rot flach
+    rechteck -120 8 250 20 farbe rot-30 deckkraft 0.7
+  linie -108,-6 118,-14 breite 3 farbe pfirsich+15 deckkraft 0.8
+  rechteck -30 -46 48 36 farbe f0e6d6 flach
+    rechteck -30 -46 14 36 farbe blau+20 deckkraft 0.6
+  rechteck -24 -40 10 10 farbe dunkel+20 flach
+  linie -60,-16 -60,-170 breite 3..1.5 farbe dunkel
+  linie 50,-18 50,-115 breite 2..1 farbe dunkel
+  linie -60,-170 115,-17 breite 0.8 farbe dunkel deckkraft 0.5
+; seine spiegelung: rote, zerfallende striche
+wiederhole i 7
+  linie 500-zuf(50,100),460+i*10 500+zuf(-20,20),462+i*10 500+zuf(40,100)-i*6,459+i*10 breite 6..2 farbe rot+5 deckkraft 0.5-i*0.05
+linie 440,462 441,500 439,540 breite 2..0.3 farbe dunkel+30 deckkraft 0.3
+
+; zweites boot, klein, dahinter, kuehl
+teil boot2 270 404 skala 0.55
+  form -100,-10! 110,-16! 92,18! -84,18! farbe blau flach
+  rechteck -10 -40 40 30 farbe f0e6d6 deckkraft 0.8 flach
+  linie -40,-14 -40,-150 breite 3..1.5 farbe dunkel+20
+wiederhole i 3
+  linie 225,418+i*8 270,419+i*8 312,418+i*8 breite 2..0.5 farbe blau deckkraft 0.25
+
+; ruderboot vorn links, ein dunkler akzent als gegengewicht
+form 80,522! 180,516! 168,532 94,534 farbe dunkel+15 deckkraft 0.85 flach
+linie 60,542 130,540 230,541 breite 2..0.5 farbe dunkel+40 deckkraft 0.3
+
+; moewen
+linie 380,200 388,195 394,201 breite 1.5..1 farbe dunkel deckkraft 0.7
+linie 410,230 416,226 421,231 breite 1.2..0.8 farbe dunkel deckkraft 0.6

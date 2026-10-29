@@ -1,0 +1,5 @@
+06 renders=4 bytes=444205 | Das Laternenlicht auf Wänden und nassem Pflaster ließ sich nicht über mix-blend-mode lösen (der Renderer mischte normal), also musste die Lichtstärke pro Pflasterstein aus dem Abstand zu den Laternen berechnet werden.
+07 renders=3 bytes=194144 | Die Kois aus einer gebogenen Wirbelsäule mit Breitenprofil, Flossen und auf den Körper beschnittenen Flecken aufzubauen und dann so zu platzieren, dass keiner unter einem Seerosenblatt oder am Bildrand verschwindet.
+08 renders=2 bytes=480713 | Das Fahrrad bestand aus vielen kleinen Teilen (Tangentialspeichen, Kettenblatt, Sattelfedern, Korb), die als Gruppe sauber zusammenpassen und zusätzlich einen glaubwürdigen Wurfschatten auf die Mauer werfen mussten.
+09 renders=3 bytes=2484553 | Die Ballonhüllen brauchten Zellen pro Bahn mit Lambert-Schattierung, damit sie rund wirken, und die Hecken mussten in der Perspektive auf den Fluchtpunkt zulaufen statt als Perlenketten quer zu liegen.
+10 renders=2 bytes=180533 | Die Katze musste flauschig wirken statt stachelig oder kürbisartig gestreift, und das hing ganz an Länge und Farbe der Fellstriche am Umriss.

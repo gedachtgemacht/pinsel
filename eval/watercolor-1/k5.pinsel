@@ -1,0 +1,66 @@
+pinsel 1 800 600
+stil aquarell
+seed 31
+licht oben-links kraft 0.3
+farbe himmel 82addb
+farbe gras 98b268
+farbe ocker e2cb86
+farbe mohn d93a26
+farbe schattig 6a6590
+
+; himmel: oben satt, zum horizont fast papier
+hintergrund verlauf himmel-8 himmel+20 f6f1e4 f6f1e4 90
+
+; eine grosse wolkenmasse, weich, vom wind gezogen
+teil wolke 170 -10
+  form 40,230 70,190 130,170 170,135 240,120 300,140 350,110 430,105 490,135 540,150 600,180 560,215 470,225 380,232 260,240 140,245 farbe fbf8f0 weich 14 flach
+    form 60,240 200,220 380,222 560,205 600,240 300,260 farbe schattig+45 deckkraft 0.45 weich 18
+form 40,70 100,55 180,60 230,85 160,95 80,92 farbe fbf8f0 deckkraft 0.85 weich 12 flach
+
+; ferne: huegel und baumgruppe, blau und weich
+form 0,398 90,380 200,386 330,372 470,382 590,368 700,378 800,372 800,408 0,410 farbe schattig+30 deckkraft 0.55 weich 5 flach
+teil baeume 640 372
+  ellipse 0 -8 30 14 farbe schattig+22 deckkraft 0.5 weich 5 flach
+  ellipse 30 -2 22 9 farbe schattig+28 deckkraft 0.45 weich 5 flach
+  ellipse -4 -12 12 12 farbe schattig+12 deckkraft 0.55 weich 3 flach
+
+; feld: ocker hinten, gruen vorn
+form 0,402 200,398 420,404 620,396 800,402 800,600! 0,600! verlauf ocker gras gras-15 90 flach
+  ; windbahnen: helle diagonale streifen
+  linie -20,480 220,445 460,462 820,425 breite 34..10 farbe ocker+20 deckkraft 0.55 weich 14
+  linie -20,560 280,510 540,530 820,485 breite 44..12 farbe ocker+15 deckkraft 0.45 weich 16
+  ; mohn in der ferne als roter dunst, in drifts
+  form 0,412 160,405 330,410 520,404 800,408 800,424 560,428 300,430 0,436 farbe mohn+10 deckkraft 0.8 weich 6
+  form 380,438 520,430 700,440 820,452 820,470 660,468 480,456 farbe mohn+15 deckkraft 0.6 weich 10
+  form -20,470 120,458 260,470 320,488 160,492 -20,500 farbe mohn+15 deckkraft 0.55 weich 10
+
+vorlage tupf
+  ellipse 0 0 5 2.6 farbe mohn+8+z*15 deckkraft 0.9
+
+streue tupf 220 bereich 0 410 800 18 tiefe skala 0.35..0.7
+streue tupf 120 bereich 300 430 520 30 tiefe skala 0.6..1.1
+streue tupf 60 bereich 0 465 300 30 skala 0.9..1.5
+streue tupf 22 bereich 400 500 400 90 skala 1.3..2.2
+
+; graeser vorn, alle in eine richtung geweht
+vorlage halm
+  linie 0,0 5,-22 16,-40 breite 2..0.5 farbe gras-35 deckkraft 0.65
+streue halm 110 bereich 0 490 800 120 skala 0.8..1.8
+
+; blickpunkt: drei mohnblumen links vorn, im wind geneigt
+vorlage bluete
+  form -20,-10 -15,-20 -6,-16 0,-22 8,-17 16,-21 21,-9 12,6 -10,6 farbe mohn
+  form -16,-16 -6,-14 0,-20 9,-15 15,-18 10,-9 -10,-9 farbe mohn+28 deckkraft 0.7
+  ellipse 1 -8 6 2.5 farbe 3a2440 deckkraft 0.55
+
+linie 150,610 158,560 172,515 190,482 breite 3..1.5 farbe gras-30
+linie 215,610 220,540 230,490 246,452 breite 3..1.5 farbe gras-30
+linie 275,610 280,560 292,520 breite 2.5..1.2 farbe gras-30
+linie 120,610 128,570 140,540 breite 2.5..1 farbe gras-30
+nutze bluete 194 476 skala 1.5 drehung 22
+nutze bluete 250 446 skala 1.8 drehung 28
+nutze bluete 296 514 skala 1.2 drehung 18
+ellipse 143 534 5 9 farbe gras-10 drehung 30
+  linie 140,528 146,540 breite 2 farbe mohn deckkraft 0.8
+; lose bluetenblatt im wind
+ellipse 360 470 6 3 farbe mohn deckkraft 0.8 drehung -20

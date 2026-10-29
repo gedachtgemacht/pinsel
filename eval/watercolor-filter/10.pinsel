@@ -1,0 +1,182 @@
+pinsel 1 800 600
+stil aquarell
+seed 10
+licht oben-links kraft 0.35
+farbe fell e8954a
+farbe streif b8622a
+farbe creme f6e2c4
+farbe holz ece4d4
+farbe vorhang 3e5a6a
+hintergrund 4a3a30
+
+; wand mit tapete
+rechteck 0 0 800 600 verlauf 5a4636 3e3028 0 textur punkte 2 texturfarbe 6a5442 flach
+ellipse 760 300 360 300 farbe ffb060 weich 80 deckkraft 0.18 flach
+
+vorlage regen
+  linie 0,0 -5,26 breite 1 farbe e4ecf4 deckkraft 0.35+z*0.3
+
+; draussen, auf das fenster zugeschnitten
+rechteck 150 40 500 360 verlauf 8c9aaa a4b0bc 90 flach
+  ; ferne haeuser im regen
+  form 150,250 150,170 200,170 200,150 230,130 260,150 260,190 320,190 320,160 350,140 380,160 380,200 450,200 450,175 490,175 490,150 530,120 570,150 570,190 650,190 650,250 ecken farbe 5a6676 weich 2 flach
+  rechteck 160 190 10 14 farbe d8c8a0 deckkraft 0.5 weich 1 flach
+  rechteck 470 185 10 14 farbe d8c8a0 deckkraft 0.5 weich 1 flach
+  rechteck 520 160 8 12 farbe d8c8a0 deckkraft 0.4 weich 1 flach
+  form 150,400 150,240 260,232 400,240 520,228 650,236 650,400 farbe 5a6a78 weich 3 flach
+  ; baum
+  linie 280,400 285,300 270,250 breite 10..4 farbe 3a4048 weich 1
+  kreis 270 230 60 farbe 3e4e50 weich 4 flach
+  kreis 230 260 40 farbe 3a4a4c weich 4 flach
+  kreis 315 255 45 farbe 425254 weich 4 flach
+  ; nasse strasse und laterne
+  rechteck 150 340 500 60 verlauf 6a7684 4e5866 90 weich 1 flach
+  linie 560,400 560,260 breite 4 farbe 3a4048
+  kreis 560 258 10 farbe ffe0a0 weich 3 deckkraft 0.8 flach
+  kreis 560 258 30 farbe ffd090 weich 14 deckkraft 0.35 flach
+  ellipse 560 370 8 30 farbe ffd090 weich 6 deckkraft 0.3 flach
+  ; nebel und regen
+  rechteck 150 40 500 360 farbe b8c4cc deckkraft 0.15 flach
+  streue regen 220 bereich 150 30 510 370
+
+; fensterlaibung
+form 120,20 680,20 650,40 150,40 ecken farbe 3a2c24 flach
+form 120,20 150,40 150,400 120,410 ecken farbe d8ccb8-25 flach
+form 680,20 650,40 650,400 680,410 ecken farbe d8ccb8-10 flach
+
+; fensterrahmen
+rechteck 150 40 500 16 farbe holz
+rechteck 150 384 500 16 farbe holz
+rechteck 150 40 16 360 farbe holz
+rechteck 634 40 16 360 farbe holz
+rechteck 392 40 16 360 farbe holz
+rechteck 150 206 500 14 farbe holz
+linie 166,57 391,57 breite 1 farbe 8a8478
+linie 409,57 633,57 breite 1 farbe 8a8478
+kreis 384 300 4 farbe b0a890
+rechteck 380 296 8 22 rund 3 farbe c8c0a8
+
+; tropfen auf der scheibe
+vorlage tropfen
+  ellipse 1 2 2+z*3 3+z*4 farbe 3a4a58 deckkraft 0.35 flach
+  ellipse 0 0 2+z*3 3+z*4 radial d8e4ec 8a9aaa deckkraft 0.7 flach
+  kreis -1 -1.5 1 farbe ffffff deckkraft 0.9 flach
+streue tropfen 30 bereich 170 60 218 142
+streue tropfen 30 bereich 412 60 218 142
+streue tropfen 30 bereich 170 224 218 156
+streue tropfen 30 bereich 412 224 218 156
+linie 220,90 222,130 218,170 221,200 breite 2.5..1 farbe d8e4ec deckkraft 0.5
+linie 470,240 468,290 472,340 470,380 breite 2.5..1 farbe d8e4ec deckkraft 0.5
+linie 590,70 592,120 589,170 breite 2..1 farbe d8e4ec deckkraft 0.5
+linie 300,250 302,300 298,350 breite 2..1 farbe d8e4ec deckkraft 0.5
+
+; vorhangstange und vorhaenge
+linie 30,22 770,22 breite 6 farbe 2a1e18
+kreis 28 22 7 farbe 6a4a2a
+kreis 772 22 7 farbe 6a4a2a
+vorlage vorhang
+  form 0,20 120,20 118,120 100,230 88,300 110,380 130,480 120,600 -10,600 -10,20 farbe vorhang textur schraffur 2 texturfarbe vorhang-15
+    linie 20,20 22,200 14,400 18,600 breite 10 farbe vorhang-25 weich 4
+    linie 55,20 58,180 50,350 56,600 breite 12 farbe vorhang-30 weich 5
+    linie 90,20 88,150 75,300 90,500 breite 10 farbe vorhang-25 weich 4
+    linie 38,20 40,250 34,600 breite 6 farbe vorhang+20 weich 4
+    linie 72,20 75,200 66,420 74,600 breite 6 farbe vorhang+20 weich 4
+  linie 95,300 70,320 30,318 breite 6 farbe c8a050
+nutze vorhang 0 0
+nutze vorhang 800 0 spiegel
+
+; fensterbank
+form 100,398 700,398 732,446 68,446 ecken verlauf e8e0d0 d4cab6 90
+rechteck 66 446 668 22 farbe c4b8a2 rund 2
+rechteck 66 468 668 6 farbe 2a201a deckkraft 0.5 weich 3 flach
+; heizkoerper
+rechteck 180 490 440 110 farbe d8d0c0 rund 6
+  wiederhole i 22
+    rechteck 188+i*20 494 10 110 farbe e8e2d6 rund 4
+rechteck 180 490 440 110 farbe 1a1410 deckkraft 0.25 flach
+
+; becher links
+teil becher 160 418
+  ellipse 0 22 26 5 farbe 2a201a deckkraft 0.3 weich 3 flach
+  rechteck -18 -10 36 32 rund 4 farbe 3a6a8a
+  linie 18,-2 30,4 18,14 breite 4 farbe 3a6a8a
+  ellipse 0 -10 18 4 farbe 4a2a1a
+  linie -4,-16 -8,-32 -2,-46 breite 4 farbe ffffff deckkraft 0.45 weich 2
+  linie 6,-16 10,-30 4,-44 breite 4 farbe ffffff deckkraft 0.4 weich 2
+
+; topfpflanze rechts
+teil pflanze 640 405
+  ellipse 0 32 34 6 farbe 2a201a deckkraft 0.3 weich 3 flach
+  linie 0,-4 -30,-60 -50,-90 breite 3..1 farbe 3a6a2a
+  linie 0,-4 10,-70 4,-110 breite 3..1 farbe 3a6a2a
+  linie 0,-4 34,-50 56,-70 breite 3..1 farbe 3a6a2a
+  ellipse -30 -60 16 8 drehung -40 farbe 4a8a3a
+  ellipse -50 -90 14 7 drehung -60 farbe 5a9a44
+  ellipse 10 -70 15 7 drehung -80 farbe 4a8a3a
+  ellipse 4 -110 14 7 drehung -100 farbe 5a9a44
+  ellipse 34 -50 15 7 drehung 20 farbe 4a8a3a
+  ellipse 56 -70 14 7 drehung -10 farbe 5a9a44
+  ellipse -12 -36 14 7 drehung -30 farbe 3e7a34
+  ellipse 20 -30 14 7 drehung 30 farbe 3e7a34
+  form -28,0! 28,0! 22,32! -22,32! farbe c0643a
+  rechteck -31 -6 62 9 rund 2 farbe a8542e
+
+; kissen
+form 250,410 560,406 575,440 240,444 farbe a8343a textur schraffur 4 texturfarbe 7a1e24
+  linie 240,425 580,422 breite 3 farbe e8d0a0 deckkraft 0.6
+  linie 330,400 325,450 breite 3 farbe e8d0a0 deckkraft 0.6
+  linie 470,400 474,450 breite 3 farbe e8d0a0 deckkraft 0.6
+
+; katze, eingerollt
+teil katze 420 392
+  ellipse 10 40 150 12 farbe 1a1010 weich 8 deckkraft 0.5 flach
+  form -70,30 -95,5 -85,-30 -45,-55 10,-62 70,-50 110,-20 118,15 100,32 40,38 -20,38 farbe fell textur korn 3
+    linie 10,-64 0,-30 8,4 breite 9..2 farbe streif
+    linie 40,-60 34,-28 42,6 breite 9..2 farbe streif
+    linie 70,-52 64,-24 72,8 breite 8..2 farbe streif
+    linie 96,-34 92,-10 100,14 breite 7..2 farbe streif
+    linie -20,-58 -26,-26 -18,0 breite 8..2 farbe streif
+    linie -50,-52 -54,-28 -46,-8 breite 7..2 farbe streif
+    linie 46,34 36,8 52,-18 84,-20 104,0 breite 3 farbe streif deckkraft 0.7
+    ellipse 0 -64 100 8 farbe streif deckkraft 0.5 weich 3 flach
+    ellipse 70 -40 30 14 farbe ffd0a0 deckkraft 0.3 weich 8 flach
+  ; schwanz um den koerper
+  linie 114,14 108,32 70,42 10,44 -50,40 -88,30 breite 18..9 farbe streif-10
+  linie 114,14 108,32 70,42 10,44 -50,40 -88,30 breite 15..7 farbe fell
+  linie 60,37 58,47 breite 4 farbe streif
+  linie 20,39 18,49 breite 4 farbe streif
+  linie -20,37 -21,46 breite 3.5 farbe streif
+  linie -55,34 -57,42 breite 3 farbe streif
+  ; pfoten
+  ellipse -66 30 16 9 farbe creme
+    linie -72,32 -72,38 breite 1 farbe c8a888
+    linie -64,32 -64,39 breite 1 farbe c8a888
+  ellipse -44 33 15 8 farbe creme
+  ; kopf
+  teil kopf -100 0 drehung -12
+    form -34,-14 -38,-52! -6,-30 farbe fell
+    form 6,-30 36,-50! 34,-12 farbe fell
+    form -30,-20 -34,-44! -14,-30 farbe e8a8a0 flach
+    form 12,-30 31,-43! 28,-18 farbe e8a8a0 flach
+    ellipse 0 0 42 34 farbe fell textur korn 3
+      linie -8,-34 -6,-18 breite 4..1 farbe streif
+      linie 8,-34 6,-18 breite 4..1 farbe streif
+      linie 0,-36 0,-20 breite 4..1 farbe streif
+      linie -40,-6 -28,-4 breite 3..1 farbe streif
+      linie 40,-6 28,-4 breite 3..1 farbe streif
+      ellipse 0 16 28 16 farbe creme deckkraft 0.85 flach
+    linie -25,0 -17,5 -8,1 breite 2.5 farbe 3a2214
+    linie 8,1 17,5 25,0 breite 2.5 farbe 3a2214
+    form -5,9 5,9 0,15 farbe d87a7a flach
+    linie 0,15 -4,19 -9,18 breite 1.2 farbe 6a3a2a
+    linie 0,15 4,19 9,18 breite 1.2 farbe 6a3a2a
+    linie -12,14 -30,11 -50,8 breite 0.8 farbe fff4e8 deckkraft 0.8
+    linie -12,17 -30,18 -50,22 breite 0.8 farbe fff4e8 deckkraft 0.8
+    linie 12,14 30,11 50,8 breite 0.8 farbe fff4e8 deckkraft 0.8
+    linie 12,17 30,18 50,22 breite 0.8 farbe fff4e8 deckkraft 0.8
+  ; zzz
+  linie -150,-60 -140,-60 -150,-50 -140,-50 ecken breite 2 farbe f0e4d0 deckkraft 0.5
+  linie -170,-85 -156,-85 -170,-71 -156,-71 ecken breite 2.5 farbe f0e4d0 deckkraft 0.4
+
+; warmes zimmerlicht von rechts
+ellipse 620 420 260 120 farbe ffb060 weich 60 deckkraft 0.12 flach

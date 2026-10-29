@@ -1,0 +1,288 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="600" viewBox="0 0 800 600">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#141a3f"/>
+    <stop offset="0.35" stop-color="#3a3470"/>
+    <stop offset="0.55" stop-color="#8a5684"/>
+    <stop offset="0.66" stop-color="#d77f7c"/>
+    <stop offset="0.72" stop-color="#f4b27a"/>
+  </linearGradient>
+  <radialGradient id="sunglow" cx="0.22" cy="0.62" r="0.45">
+    <stop offset="0" stop-color="#ffd59a" stop-opacity="0.95"/>
+    <stop offset="0.25" stop-color="#ff9f78" stop-opacity="0.5"/>
+    <stop offset="1" stop-color="#ff9f78" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="snow" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#b9b0d6"/>
+    <stop offset="0.3" stop-color="#d9d3ec"/>
+    <stop offset="1" stop-color="#f1effa"/>
+  </linearGradient>
+  <linearGradient id="snowWarm" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#ffd2b0" stop-opacity="0.55"/>
+    <stop offset="0.6" stop-color="#ffd2b0" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="fog" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#e7a7a0" stop-opacity="0"/>
+    <stop offset="0.6" stop-color="#e2a9a8" stop-opacity="0.55"/>
+    <stop offset="1" stop-color="#c8b4d8" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="fur" cx="0.35" cy="0.3" r="0.8">
+    <stop offset="0" stop-color="#f29a4a"/>
+    <stop offset="0.5" stop-color="#d4642a"/>
+    <stop offset="1" stop-color="#8d3a1c"/>
+  </radialGradient>
+  <linearGradient id="tailG" x1="0" y1="0" x2="1" y2="0.3">
+    <stop offset="0" stop-color="#b8521f"/>
+    <stop offset="0.5" stop-color="#e07a36"/>
+    <stop offset="1" stop-color="#c35d26"/>
+  </linearGradient>
+  <linearGradient id="legG" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#c25a26"/>
+    <stop offset="0.45" stop-color="#5a2a18"/>
+    <stop offset="0.7" stop-color="#1f1412"/>
+  </linearGradient>
+  <linearGradient id="whiteFur" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fff6ee"/>
+    <stop offset="1" stop-color="#cfc6dc"/>
+  </linearGradient>
+  <radialGradient id="eyeG" cx="0.4" cy="0.4" r="0.6">
+    <stop offset="0" stop-color="#ffd36a"/>
+    <stop offset="1" stop-color="#b9661c"/>
+  </radialGradient>
+  <radialGradient id="vign" cx="0.5" cy="0.5" r="0.75">
+    <stop offset="0.6" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#0a0820" stop-opacity="0.55"/>
+  </radialGradient>
+  <filter id="blur1"><feGaussianBlur stdDeviation="1"/></filter>
+  <filter id="blur2"><feGaussianBlur stdDeviation="2.5"/></filter>
+  <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
+  <filter id="blur14"><feGaussianBlur stdDeviation="14"/></filter>
+  <filter id="furTex" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9 0.25" numOctaves="2" seed="3" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 -0.12" result="a"/>
+    <feComposite in="a" in2="SourceGraphic" operator="in" result="t"/>
+    <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="t"/></feMerge>
+  </filter>
+  <filter id="snowTex">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.08" numOctaves="3" seed="8"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.47  0 0 0 0 0.7  0 0 0 0.35 -0.1"/>
+    <feComposite in2="SourceGraphic" operator="in"/>
+  </filter>
+  <symbol id="pine" viewBox="0 0 100 200">
+    <path d="M50 0 L57 26 L53 26 L65 56 L58 55 L73 92 L63 90 L81 132 L68 129 L92 178 L56 174 L56 200 L44 200 L44 174 L8 178 L32 129 L19 132 L37 90 L27 92 L42 55 L35 56 L47 26 L43 26 Z"/>
+  </symbol>
+  <symbol id="pineSnow" viewBox="0 0 100 200">
+    <path d="M50 0 L57 26 L53 26 L65 56 L58 55 L73 92 L63 90 L81 132 L68 129 L92 178 L56 174 L56 200 L44 200 L44 174 L8 178 L32 129 L19 132 L37 90 L27 92 L42 55 L35 56 L47 26 L43 26 Z" fill="#1d2142"/>
+    <path d="M50 2 L54 20 C50 24 46 22 45 20 Z M44 40 C50 46 58 44 62 50 L59 52 C52 50 46 52 39 52 Z M38 74 C48 82 60 78 70 88 L64 88 C52 86 42 88 30 90 Z M30 112 C46 122 64 116 78 128 L70 128 C54 126 38 128 21 131 Z M22 154 C40 166 64 160 88 174 L60 172 C44 172 26 174 10 177 Z" fill="#b8b4dc"/>
+    <path d="M47 4 L50 14 L46 18 Z M40 44 L46 50 L38 51 Z M33 78 L42 84 L30 89 Z M26 116 L38 124 L22 130 Z M18 158 L32 166 L11 176 Z" fill="#ffd8c2" opacity="0.7"/>
+  </symbol>
+  <pattern id="flakes" width="160" height="160" patternUnits="userSpaceOnUse"><g fill="#fff">
+    <circle cx="12" cy="20" r="1.6"/><circle cx="60" cy="8" r="1.1"/><circle cx="104" cy="34" r="2"/>
+    <circle cx="140" cy="70" r="1.3"/><circle cx="30" cy="80" r="1"/><circle cx="80" cy="96" r="1.7"/>
+    <circle cx="124" cy="128" r="1.2"/><circle cx="20" cy="140" r="2.1"/><circle cx="66" cy="150" r="1"/>
+    <circle cx="150" cy="150" r="1.5"/><circle cx="96" cy="66" r="0.9"/><circle cx="44" cy="44" r="1.3"/>
+  </g></pattern>
+  <pattern id="flakes2" width="230" height="210" patternUnits="userSpaceOnUse" patternTransform="translate(37 51)"><g fill="#fff">
+    <circle cx="30" cy="30" r="2.8"/><circle cx="150" cy="60" r="3.2"/><circle cx="90" cy="150" r="2.5"/>
+    <circle cx="200" cy="180" r="3"/><circle cx="60" cy="110" r="2.2"/>
+  </g></pattern>
+  <clipPath id="bodyClip">
+    <path d="M412 300 C392 316 352 352 336 400 C322 440 330 478 356 488 L440 492 C446 470 446 444 452 420 C470 400 474 360 462 330 C446 330 426 318 412 300 Z"/>
+  </clipPath>
+</defs>
+
+<!-- sky -->
+<rect width="800" height="600" fill="url(#sky)"/>
+<rect width="800" height="600" fill="url(#sunglow)"/>
+<g fill="#fff">
+  <circle cx="620" cy="40" r="1.2" opacity="0.9"/><circle cx="700" cy="88" r="0.9" opacity="0.7"/>
+  <circle cx="520" cy="70" r="0.8" opacity="0.6"/><circle cx="760" cy="30" r="1.4" opacity="0.8"/>
+  <circle cx="440" cy="26" r="0.9" opacity="0.7"/><circle cx="340" cy="50" r="1" opacity="0.5"/>
+  <circle cx="580" cy="120" r="0.8" opacity="0.5"/><circle cx="740" cy="140" r="1" opacity="0.5"/>
+  <circle cx="260" cy="20" r="0.8" opacity="0.6"/><circle cx="660" cy="170" r="0.7" opacity="0.4"/>
+</g>
+<!-- crescent moon -->
+<g transform="translate(655 95)">
+  <circle r="26" fill="#fff3d8" opacity="0.18" filter="url(#blur6)"/>
+  <path d="M-6 -16 A17 17 0 1 0 12 10 A14 14 0 1 1 -6 -16 Z" fill="#fff4dd"/>
+</g>
+<!-- clouds -->
+<g opacity="0.55" filter="url(#blur2)">
+  <path d="M0 230 C60 222 120 226 200 220 C260 216 300 224 380 222 L380 232 C280 236 160 240 0 242 Z" fill="#c9708a"/>
+  <path d="M430 196 C500 188 580 192 660 186 C720 182 770 188 800 186 L800 196 C700 200 560 204 430 204 Z" fill="#7e5487"/>
+  <path d="M90 268 C160 262 240 266 300 262 L300 270 C220 274 150 276 90 274 Z" fill="#f2a487"/>
+</g>
+
+<!-- far hills & forest -->
+<path d="M0 330 C120 300 220 318 320 306 C420 294 520 312 620 300 C700 292 760 304 800 300 L800 400 L0 400 Z" fill="#8b6e9e"/>
+<g fill="#7a6496">
+  <use href="#pine" x="0" y="292" width="16" height="40"/><use href="#pine" x="14" y="298" width="14" height="34"/>
+  <use href="#pine" x="30" y="290" width="18" height="44"/><use href="#pine" x="48" y="296" width="14" height="36"/>
+  <use href="#pine" x="62" y="288" width="18" height="44"/><use href="#pine" x="80" y="294" width="16" height="38"/>
+  <use href="#pine" x="96" y="290" width="18" height="44"/><use href="#pine" x="116" y="296" width="14" height="36"/>
+  <use href="#pine" x="196" y="296" width="16" height="38"/><use href="#pine" x="210" y="290" width="18" height="44"/>
+  <use href="#pine" x="228" y="298" width="14" height="34"/><use href="#pine" x="244" y="292" width="16" height="40"/>
+  <use href="#pine" x="420" y="282" width="18" height="44"/><use href="#pine" x="436" y="288" width="16" height="40"/>
+  <use href="#pine" x="452" y="284" width="18" height="44"/><use href="#pine" x="470" y="290" width="14" height="36"/>
+  <use href="#pine" x="486" y="284" width="18" height="46"/><use href="#pine" x="504" y="292" width="14" height="36"/>
+  <use href="#pine" x="560" y="280" width="18" height="46"/><use href="#pine" x="578" y="286" width="16" height="40"/>
+  <use href="#pine" x="594" y="280" width="18" height="46"/><use href="#pine" x="612" y="288" width="14" height="38"/>
+  <use href="#pine" x="626" y="282" width="18" height="44"/><use href="#pine" x="644" y="288" width="16" height="40"/>
+  <use href="#pine" x="700" y="282" width="18" height="44"/><use href="#pine" x="718" y="288" width="14" height="38"/>
+  <use href="#pine" x="732" y="280" width="18" height="46"/><use href="#pine" x="750" y="286" width="16" height="40"/>
+  <use href="#pine" x="766" y="280" width="18" height="46"/><use href="#pine" x="784" y="288" width="16" height="40"/>
+</g>
+<rect y="300" width="800" height="60" fill="url(#fog)"/>
+
+<!-- mid forest -->
+<path d="M0 360 C100 340 200 352 300 346 C420 338 540 352 660 342 C720 338 770 344 800 342 L800 420 L0 420 Z" fill="#54487a"/>
+<g fill="#463d6e">
+  <use href="#pine" x="-10" y="290" width="34" height="80"/><use href="#pine" x="18" y="300" width="28" height="68"/>
+  <use href="#pine" x="40" y="284" width="36" height="86"/><use href="#pine" x="70" y="304" width="26" height="62"/>
+  <use href="#pine" x="92" y="296" width="30" height="72"/><use href="#pine" x="118" y="310" width="24" height="56"/>
+  <use href="#pine" x="140" y="300" width="28" height="66"/>
+  <use href="#pine" x="520" y="296" width="30" height="70"/><use href="#pine" x="546" y="286" width="34" height="80"/>
+  <use href="#pine" x="576" y="302" width="26" height="62"/><use href="#pine" x="598" y="290" width="32" height="76"/>
+  <use href="#pine" x="626" y="300" width="28" height="66"/><use href="#pine" x="650" y="282" width="36" height="84"/>
+  <use href="#pine" x="682" y="298" width="28" height="68"/><use href="#pine" x="706" y="288" width="32" height="78"/>
+  <use href="#pine" x="734" y="300" width="28" height="66"/><use href="#pine" x="758" y="284" width="36" height="84"/>
+</g>
+<rect y="330" width="800" height="70" fill="url(#fog)" opacity="0.8"/>
+
+<!-- near forest framing -->
+<g>
+  <use href="#pineSnow" x="-50" y="120" width="150" height="300"/>
+  <use href="#pineSnow" x="60" y="200" width="100" height="200"/>
+  <use href="#pineSnow" x="130" y="250" width="70" height="140"/>
+  <use href="#pineSnow" x="690" y="100" width="160" height="320"/>
+  <use href="#pineSnow" x="620" y="210" width="100" height="200"/>
+  <use href="#pineSnow" x="580" y="270" width="60" height="120"/>
+</g>
+
+<!-- snow ground -->
+<path d="M0 386 C120 374 240 392 360 384 C480 376 620 390 800 380 L800 600 L0 600 Z" fill="url(#snow)"/>
+<path d="M0 386 C120 374 240 392 360 384 C480 376 620 390 800 380 L800 600 L0 600 Z" fill="url(#snowWarm)"/>
+<path d="M0 386 C120 374 240 392 360 384 C480 376 620 390 800 380 L800 600 L0 600 Z" fill="#fff" filter="url(#snowTex)" opacity="0.6"/>
+<!-- drifts -->
+<path d="M0 470 C80 450 180 452 260 470 C200 474 120 482 0 500 Z" fill="#a9a4d0" opacity="0.6"/>
+<path d="M0 452 C90 430 190 440 270 468 C190 452 90 450 0 462 Z" fill="#fff6f0" opacity="0.6" filter="url(#blur2)"/>
+<path d="M520 520 C600 496 700 494 800 506 L800 540 C700 528 610 530 520 520 Z" fill="#a9a4d0" opacity="0.55"/>
+<path d="M520 520 C610 492 700 490 800 500 L800 506 C700 498 610 502 520 520 Z" fill="#fff" opacity="0.7" filter="url(#blur2)"/>
+<path d="M0 560 C150 540 300 552 420 570 C300 566 150 570 0 590 Z" fill="#a9a4d0" opacity="0.4"/>
+<!-- tree shadows on snow -->
+<path d="M100 410 L330 440 L330 446 L80 420 Z" fill="#7d78b0" opacity="0.25" filter="url(#blur2)"/>
+<path d="M140 396 L380 412 L380 417 L120 404 Z" fill="#7d78b0" opacity="0.2" filter="url(#blur2)"/>
+
+<!-- footprints -->
+<g fill="#8e88bf" opacity="0.6">
+  <ellipse cx="560" cy="430" rx="4" ry="2"/><ellipse cx="582" cy="426" rx="3.6" ry="1.8"/>
+  <ellipse cx="604" cy="420" rx="3.2" ry="1.6"/><ellipse cx="624" cy="414" rx="3" ry="1.5"/>
+  <ellipse cx="644" cy="408" rx="2.6" ry="1.3"/><ellipse cx="662" cy="403" rx="2.3" ry="1.1"/>
+  <ellipse cx="680" cy="398" rx="2" ry="1"/><ellipse cx="696" cy="394" rx="1.8" ry="0.9"/>
+  <ellipse cx="538" cy="438" rx="4.4" ry="2.2"/><ellipse cx="514" cy="448" rx="5" ry="2.4"/>
+  <ellipse cx="490" cy="460" rx="5.4" ry="2.6"/>
+</g>
+
+<!-- fox shadow -->
+<ellipse cx="410" cy="498" rx="120" ry="14" fill="#6e68a8" opacity="0.45" filter="url(#blur6)"/>
+
+<!-- FOX -->
+<g id="fox">
+  <!-- back front leg -->
+  <path d="M418 420 L414 486 C414 492 424 494 436 492 C438 488 434 485 430 484 L436 420 Z" fill="url(#legG)" opacity="0.9"/>
+  <!-- body -->
+  <path d="M412 300 C392 316 352 352 336 400 C322 440 330 478 356 488 L440 492 C446 470 446 444 452 420 C470 400 474 360 462 330 C446 330 426 318 412 300 Z" fill="url(#fur)" filter="url(#furTex)"/>
+  <g clip-path="url(#bodyClip)">
+    <!-- haunch shading -->
+    <ellipse cx="372" cy="448" rx="52" ry="46" fill="#a2461d" opacity="0.55" filter="url(#blur6)"/>
+    <path d="M346 410 C360 396 392 396 410 420 C420 440 416 470 400 488" fill="none" stroke="#7a3216" stroke-width="4" opacity="0.28" filter="url(#blur2)"/>
+    <!-- rim light on back -->
+    <path d="M410 302 C390 318 352 352 338 400 C326 436 330 470 350 486" fill="none" stroke="#ffc69a" stroke-width="6" opacity="0.75" filter="url(#blur2)"/>
+    <!-- white chest -->
+    <path d="M463 328 C476 352 476 388 458 418 C450 430 440 434 430 430 C428 400 432 360 448 328 Z" fill="url(#whiteFur)"/>
+    <path d="M458 340 l-6 6 M464 360 l-7 5 M462 384 l-6 4 M454 404 l-7 5 M444 422 l-6 4" stroke="#c9bfd6" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+    <!-- fur strokes -->
+    <g stroke="#f7a862" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7">
+      <path d="M380 340 q6 8 14 10"/><path d="M370 360 q6 8 14 10"/><path d="M360 382 q8 6 16 8"/>
+      <path d="M392 330 q6 6 12 8"/><path d="M402 360 q6 6 12 6"/><path d="M386 384 q8 6 16 6"/>
+      <path d="M352 410 q8 4 14 4"/><path d="M412 386 q6 6 10 6"/>
+    </g>
+    <g stroke="#8a3517" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.6">
+      <path d="M396 410 q8 6 12 12"/><path d="M404 430 q6 8 8 14"/><path d="M358 440 q6 8 12 10"/>
+      <path d="M372 470 q8 4 16 4"/><path d="M420 404 q4 6 6 12"/>
+    </g>
+  </g>
+  <!-- hind paw -->
+  <path d="M356 486 C370 480 398 482 414 486 C420 490 418 496 410 497 L362 497 C352 496 350 490 356 486 Z" fill="#2a1914"/>
+  <!-- front leg -->
+  <path d="M436 418 C434 440 432 466 430 486 C428 494 440 497 458 495 C462 491 458 486 450 485 C450 466 452 440 456 414 Z" fill="url(#legG)"/>
+  <path d="M440 488 l0 6 M446 488 l0 6" stroke="#4a3430" stroke-width="1"/>
+  <!-- tail -->
+  <g filter="url(#furTex)">
+    <path d="M338 430 C296 444 286 494 330 506 C380 516 452 510 498 500 C516 496 520 484 506 478 C470 484 400 490 370 478 C346 468 340 450 346 432 Z" fill="url(#tailG)"/>
+    <path d="M470 484 C484 482 498 478 506 478 C520 484 516 496 498 500 C484 503 470 504 456 505 C466 498 468 490 470 484 Z" fill="url(#whiteFur)"/>
+  </g>
+  <path d="M300 470 C306 494 330 504 370 506" fill="none" stroke="#ffc69a" stroke-width="3" opacity="0.6" filter="url(#blur1)"/>
+  <path d="M336 500 C380 506 430 504 470 498" fill="none" stroke="#7d3214" stroke-width="2" opacity="0.5"/>
+  <g stroke="#f6a35c" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.8">
+    <path d="M318 470 q10 6 20 6"/><path d="M330 488 q12 4 22 2"/><path d="M370 490 q12 4 22 2"/>
+    <path d="M410 494 q12 2 22 0"/><path d="M310 452 q8 6 16 8"/>
+  </g>
+
+  <!-- head -->
+  <path d="M412 300 C408 284 414 272 424 268 L418 226 L446 260 C450 259 454 260 456 262 L474 226 L478 274 C482 280 492 294 502 306 C505 311 502 316 496 317 C484 320 472 324 463 331 C448 334 428 326 412 300 Z" fill="url(#fur)" filter="url(#furTex)"/>
+  <!-- back ear inner -->
+  <path d="M421 236 L440 260 L428 266 Z" fill="#3a1d14"/><path d="M418 226 L425 240 L428 234 Z" fill="#1a0f0c"/>
+  <!-- front ear -->
+  <path d="M472 236 L475 270 L461 264 Z" fill="#2b1610"/>
+  <path d="M471 244 L471 266 M469 250 L464 262 M473 248 L474 262" stroke="#efe2da" stroke-width="1" opacity="0.8"/>
+  <path d="M474 226 L470 238 L477 244 Z" fill="#160d0b"/>
+  <path d="M474 226 L478 274" stroke="#7a2e14" stroke-width="1.5" opacity="0.6"/>
+  <!-- rim light head -->
+  <path d="M413 298 C409 284 414 273 425 267" fill="none" stroke="#ffc69a" stroke-width="3" opacity="0.8" filter="url(#blur1)"/>
+  <!-- cheek white -->
+  <path d="M452 300 C462 304 476 306 492 312 C494 316 490 318 484 319 C474 322 466 326 462 331 C452 332 440 326 432 316 C440 312 446 306 452 300 Z" fill="url(#whiteFur)"/>
+  <path d="M440 318 l-6 4 M448 324 l-5 5 M456 328 l-4 5" stroke="#fff6ee" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- tear line & snout -->
+  <path d="M474 290 C482 298 490 304 500 308" fill="none" stroke="#5a2414" stroke-width="2" opacity="0.6"/>
+  <ellipse cx="497" cy="310" rx="5.5" ry="4.2" fill="#1a1110" transform="rotate(20 497 310)"/>
+  <ellipse cx="497" cy="308.5" rx="2" ry="1" fill="#8a7a88"/>
+  <path d="M494 316 C486 318 478 320 470 322" fill="none" stroke="#3a2420" stroke-width="1.2"/>
+  <!-- eye -->
+  <path d="M462 285 C466 280 474 280 478 285 C474 290 466 290 462 285 Z" fill="url(#eyeG)" stroke="#1a0f0c" stroke-width="1.6"/>
+  <ellipse cx="471" cy="285" rx="1.4" ry="3.6" fill="#120a08"/>
+  <circle cx="473.5" cy="283.2" r="1.1" fill="#fff"/>
+  <path d="M460 280 C466 277 474 277 480 281" fill="none" stroke="#7a2e14" stroke-width="1.2" opacity="0.7"/>
+  <!-- whiskers -->
+  <g stroke="#f4ece8" stroke-width="0.7" opacity="0.7" fill="none">
+    <path d="M488 314 C500 318 510 322 520 330"/><path d="M486 315 C498 322 506 328 514 340"/><path d="M490 312 C504 312 514 314 526 318"/>
+  </g>
+  <!-- head fur strokes -->
+  <g stroke="#f7a862" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7">
+    <path d="M440 276 q6 2 10 6"/><path d="M430 284 q6 4 8 8"/><path d="M448 288 q4 4 6 8"/><path d="M482 296 q4 2 8 6"/>
+  </g>
+  <path d="M420 296 C426 310 436 320 452 330" fill="none" stroke="#8a3517" stroke-width="1.5" opacity="0.5"/>
+</g>
+
+
+<!-- foreground grass stalks and sparkles -->
+<g stroke="#4a3a52" stroke-width="1.4" fill="none" stroke-linecap="round">
+  <path d="M90 560 q-4 -30 -14 -52"/><path d="M96 562 q2 -36 10 -60"/><path d="M102 562 q8 -24 22 -40"/>
+  <path d="M84 562 q-10 -18 -26 -28"/><path d="M110 564 q-2 -20 4 -34"/>
+  <path d="M700 572 q-6 -34 -2 -62"/><path d="M708 574 q8 -28 24 -44"/><path d="M694 574 q-14 -20 -30 -30"/>
+  <path d="M716 574 q2 -18 10 -26"/>
+</g>
+<g fill="#4a3a52"><ellipse cx="76" cy="507" rx="2" ry="5" transform="rotate(-30 76 507)"/><ellipse cx="106" cy="501" rx="2" ry="5"/><ellipse cx="698" cy="509" rx="2" ry="6"/><ellipse cx="732" cy="530" rx="2" ry="5" transform="rotate(40 732 530)"/></g>
+<g fill="#fff">
+  <path d="M220 520 l1.5 -5 l1.5 5 l5 1.5 l-5 1.5 l-1.5 5 l-1.5 -5 l-5 -1.5 Z" opacity="0.9"/>
+  <path d="M600 470 l1 -4 l1 4 l4 1 l-4 1 l-1 4 l-1 -4 l-4 -1 Z" opacity="0.8"/>
+  <path d="M150 440 l1 -3 l1 3 l3 1 l-3 1 l-1 3 l-1 -3 l-3 -1 Z" opacity="0.8"/>
+  <path d="M520 560 l1.2 -4 l1.2 4 l4 1.2 l-4 1.2 l-1.2 4 l-1.2 -4 l-4 -1.2 Z" opacity="0.8"/>
+  <circle cx="300" cy="540" r="1"/><circle cx="420" cy="560" r="0.9"/><circle cx="640" cy="440" r="0.9"/><circle cx="260" cy="430" r="0.8"/>
+</g>
+<!-- falling snow -->
+<rect width="800" height="600" fill="url(#flakes)" opacity="0.7"/>
+<rect width="800" height="600" fill="url(#flakes2)" opacity="0.55" filter="url(#blur1)"/>
+
+<rect width="800" height="600" fill="url(#vign)"/>
+</svg>

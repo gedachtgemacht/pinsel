@@ -1,0 +1,67 @@
+pinsel 1 800 600
+stil aquarell
+seed 5
+licht rechts kraft 0.4
+farbe abend 5f5d93
+farbe glut eea06a
+farbe rosa e6aeb0
+farbe fuchs cc6a2c
+farbe nacht 3c3d63
+
+hintergrund farbe papier
+
+; himmel: oben tiefes violett, unten glut am horizont
+rechteck 0 0 800 330 verlauf abend+15 abend+40 rosa 90 deckkraft 0.65 nass
+ellipse 640 300 320 70 farbe glut deckkraft 0.85 nass weich 25
+ellipse 660 305 110 30 farbe glut+30 deckkraft 0.8 nass weich 15
+
+; ferner waldrand, kühl und weich, fichten sitzen auf dem rand
+vorlage fichte h=50
+  form 0,-h! -h*0.14,-h*0.55 -h*0.26,0! h*0.26,0! h*0.14,-h*0.55 farbe nacht+12+z*10 nass
+form 0,330! 0,265 40,256 80,266 120,250 170,262 230,258 290,272 360,266 420,285 500,290 560,300 620,305 700,300 800,296 800,330! farbe nacht+20 deckkraft 0.85 nass
+streue fichte 20 bereich 0 290 320 12 skala 0.6..1.2 deckkraft 0.8 h=80
+
+; schneefeld: papier, nur leise schattenlasuren
+form 0,600! 0,330! 300,326 560,322 800,318! 800,600! farbe abend+60 deckkraft 0.45 nass
+form 0,600! 0,430 250,400 520,450 800,420 800,600! farbe abend+40 deckkraft 0.45 nass weich 10
+; schneewelle mit licht vom horizont
+form 380,600! 450,470 600,430 800,440 800,600! aussparen weich 12 deckkraft 0.8
+; warmer widerschein auf dem schnee
+ellipse 640 350 260 22 farbe glut+25 deckkraft 0.5 nass weich 14
+
+; spur aus der ferne, endet hinter dem fuchs
+wiederhole i 11
+  ellipse 600-i*30+sin(i*70)*6 352+i*i*1.15 2+i*0.5 1.4+i*0.35 farbe abend+5 deckkraft 0.6
+
+; langer blauer schatten des fuchses
+form 230,470 140,474 40,484 70,490 220,484 farbe abend+15 deckkraft 0.7
+
+; fuchs, blickpunkt, schaut in die glut
+teil fuchs 262 470 skala 1.15
+  ; schwanz am boden, weisse spitze
+  form -36,-2 -64,-8 -100,0 -94,10 -50,10 10,6 farbe fuchs-5
+  form -100,0! -94,10 -80,9 -84,-1 farbe papier
+  ; koerper, schlank und aufrecht
+  form -36,2 -44,-16 -34,-36 -14,-52 2,-64 18,-56 22,-30 18,2 farbe fuchs
+  form -40,-4 -42,-18 -30,-30 -18,-20 -16,2 farbe fuchs-15 deckkraft 0.6 nass
+  ; brust hell
+  form 12,-52 20,-34 17,-4 10,-22 farbe papier-6 deckkraft 0.9
+  ; vorderlaeufe, dunkle strümpfe
+  form 13,-20 19,-20 19,2! 13,2! farbe nacht+10 flach
+  form 6,-18 11,-18 11,2! 5,2! farbe nacht+20 flach
+  ; kopf, spitz
+  form 0,-62 6,-74 22,-80 40,-73 54,-69! 38,-62 16,-56 farbe fuchs
+  form 30,-68 46,-72 54,-69! 38,-62 farbe papier-6
+  kreis 54 -69 1.8 farbe nacht
+  kreis 32 -73 1.6 farbe nacht
+  ; ohren
+  form 9,-74! 11,-96! 22,-79! farbe fuchs-30 ecken
+  form 19,-79! 25,-98! 30,-77! farbe fuchs-20 ecken
+  ; abendlicht am ruecken
+  linie -42,-16 -32,-36 -12,-52 2,-64 breite 2 farbe glut+20 deckkraft 0.8
+
+; trockene halme durch den schnee, vorne
+wiederhole i 9
+  linie 540+i*20+zuf(-8,8),600 540+i*20+zuf(-20,20),525-zuf(0,60) breite 2..0.4 farbe nacht+15 deckkraft 0.75
+wiederhole i 5
+  linie 30+i*14,600 26+i*16,555-zuf(0,30) breite 1.6..0.4 farbe nacht+25 deckkraft 0.55

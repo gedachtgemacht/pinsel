@@ -1,0 +1,105 @@
+pinsel 1 800 600
+seed 5
+licht oben-links kraft 0.45
+farbe nebel f4f2ee
+farbe fernberg 8ea4bc
+farbe mittelberg 5d7690
+farbe schneeweiss f6f7fa
+hintergrund verlauf 86aed6 bcd2e4 f2dcc4 f8e6c8 90
+
+; sonne und glühen
+kreis 140 175 150 farbe ffe8c0 deckkraft 0.55 weich 50 flach
+kreis 140 178 24 farbe fffaf0 weich 3 flach
+
+; zarte wolkenstreifen
+ellipse 520 90 180 10 farbe ffffff deckkraft 0.5 weich 8 flach
+ellipse 640 120 140 7 farbe ffffff deckkraft 0.4 weich 6 flach
+ellipse 300 60 120 6 farbe ffffff deckkraft 0.35 weich 6 flach
+
+vorlage tanne h=80 c=#2c4a48 d=#1c302e
+  linie 0,0 0,-h breite h*0.05 farbe d
+  form 0,-h! h*0.1,-h*0.8! h*0.05,-h*0.79! h*0.17,-h*0.58! h*0.08,-h*0.57! h*0.24,-h*0.34! h*0.11,-h*0.33! h*0.3,-h*0.08! -h*0.3,-h*0.08! -h*0.11,-h*0.33! -h*0.24,-h*0.34! -h*0.08,-h*0.57! -h*0.17,-h*0.58! -h*0.05,-h*0.79! -h*0.1,-h*0.8! farbe c textur striche 3 texturfarbe d
+    form 0,-h h*0.4,-h 0,0 farbe d deckkraft 0.45
+
+; alles über der wasserlinie, y=0 ist das ufer
+vorlage landschaft
+  ; ferne gipfel
+  form 0,-150 40,-162 80,-186 120,-176 160,-172 205,-218 250,-262 275,-246 300,-230 320,-240 340,-246 370,-222 400,-200 435,-240 470,-282 500,-256 530,-232 565,-224 600,-212 640,-236 680,-252 710,-226 740,-206 770,-196 800,-182 800,0 0,0 ecken farbe fernberg textur striche 2 texturfarbe fernberg-8
+    form 250,-262 275,-246 300,-230 310,-170 290,-100 268,-170 ecken farbe 3a4c66 deckkraft 0.3
+    form 340,-246 370,-222 400,-200 380,-150 350,-120 345,-190 ecken farbe 3a4c66 deckkraft 0.25
+    form 470,-282 500,-256 530,-232 522,-160 495,-80 482,-190 ecken farbe 3a4c66 deckkraft 0.3
+    form 680,-252 710,-226 740,-206 735,-140 705,-80 690,-170 ecken farbe 3a4c66 deckkraft 0.3
+    form 80,-186 120,-176 160,-172 150,-120 110,-100 95,-150 ecken farbe 3a4c66 deckkraft 0.25
+    linie 250,-262 240,-220 232,-190 220,-160 breite 3..0.5 farbe schneeweiss deckkraft 0.7
+    linie 470,-282 462,-240 450,-200 445,-170 breite 3..0.5 farbe schneeweiss deckkraft 0.7
+    linie 470,-282 488,-230 495,-190 breite 2.5..0.5 farbe schneeweiss deckkraft 0.6
+    linie 680,-252 672,-215 660,-190 breite 2.5..0.5 farbe schneeweiss deckkraft 0.7
+    form 250,-272! 310,-236! 272,-232 260,-242 248,-224 236,-236 214,-222 200,-262! ecken farbe schneeweiss
+    form 470,-292! 545,-246! 512,-234 498,-246 484,-226 470,-242 456,-224 440,-244 420,-236 400,-262! ecken farbe schneeweiss
+    form 680,-262! 745,-226! 712,-220 700,-232 688,-214 676,-228 660,-218 645,-236! ecken farbe schneeweiss
+    form 300,-230 340,-244 362,-226 350,-222 336,-232 318,-222 ecken farbe schneeweiss deckkraft 0.8
+  ellipse 400 -140 500 40 farbe nebel deckkraft 0.35 weich 20 flach
+  ; mittlerer rücken
+  form 0,-80 100,-122 200,-92 300,-138 380,-102 450,-64 550,-112 650,-148 720,-112 800,-94 800,0! 0,0! farbe mittelberg textur striche 3 texturfarbe mittelberg-10
+    form 300,-138 380,-102 450,-64 400,0 330,0 farbe 2e4058 deckkraft 0.25
+    form 650,-148 720,-112 800,-94 800,0 680,0 farbe 2e4058 deckkraft 0.25
+  ; waldband am hang
+  wiederhole i 80
+    nutze tanne i*10.2+sin(i*53)*4 -20+sin(i*31)*6 h=34+sin(i*91)*8 c=#3a5a5a d=#2a4444
+  ellipse 400 -12 520 16 farbe nebel deckkraft 0.45 weich 12 flach
+  ; ufer mitte
+  form 0,-8 200,-14 400,-6 600,-12 800,-8 800,0! 0,0! farbe 2e3e34
+  wiederhole i 60
+    nutze tanne 220+i*6+sin(i*41)*3 0 h=26+sin(i*77)*9 c=#2c4a44 d=#1e3430
+  ; nahe ufer links und rechts
+  wiederhole i 26
+    nutze tanne i*9+sin(i*17)*4 0 h=150-i*3+sin(i*67)*22 c=#21403a d=#132824
+  wiederhole i 28
+    nutze tanne 560+i*9+sin(i*23)*4 0 h=70+i*4+sin(i*61)*24 c=#1f3c36 d=#122622
+
+; wasser
+rechteck 0 350 800 250 verlauf c4d4dc 8aa6b8 4a6a7c 90 flach
+
+; spiegelung
+teil spiegelbild 0 350 drehung 180 spiegel deckkraft 0.55
+  nutze landschaft 0 0
+kreis 140 525 90 farbe ffe8c0 deckkraft 0.35 weich 40 flach
+
+; wellenlinien auf dem wasser
+wiederhole i 40
+  linie 400+sin(i*73)*380,356+i*6 400+sin(i*73)*380+30+i*2,356+i*6 breite 1+i*0.04 farbe ffffff deckkraft 0.35
+
+; landschaft selbst
+nutze landschaft 0 350
+
+; sonnenstrahlen
+form 140,178! 420,600! 520,600! ecken farbe fff4d8 deckkraft 0.12 weich 14 flach
+form 140,178! 260,600! 320,600! ecken farbe fff4d8 deckkraft 0.1 weich 12 flach
+form 140,178! 620,420! 660,480! ecken farbe fff4d8 deckkraft 0.1 weich 12 flach
+; morgennebel über dem wasser
+ellipse 400 352 520 16 farbe nebel deckkraft 0.6 weich 12 flach
+ellipse 250 372 320 26 farbe nebel deckkraft 0.4 weich 18 flach
+ellipse 620 345 260 22 farbe nebel deckkraft 0.4 weich 18 flach
+ellipse 120 320 200 40 farbe nebel deckkraft 0.4 weich 22 flach
+
+; vordergrund ufer links
+form -10,600! -10,505 60,498 140,508 220,530 300,568 340,600! verlauf 4a5a3a 2e3a24 90 textur striche 4 texturfarbe 6a7a48
+ellipse 90 520 46 22 farbe 7a7c78 textur korn 3 schatten
+  ellipse 96 532 44 14 farbe 4a4c48 deckkraft 0.5 weich 4
+ellipse 160 548 34 16 farbe 6c706c textur korn 3 schatten
+ellipse 40 560 50 24 farbe 848680 textur korn 3 schatten
+  ellipse 46 574 48 14 farbe 4a4c48 deckkraft 0.5 weich 4
+ellipse 250 580 30 12 farbe 707470 schatten
+vorlage halm h=40
+  linie 0,0 h*0.15,-h*0.5 h*0.35,-h breite 2..0.4 farbe 6a7a3a
+streue halm 50 bereich 0 500 260 90 skala 0.5..1.4
+wiederhole i 6
+  linie 200+i*14,560 202+i*14,520-i*4 breite 3..1 farbe 5a4a30
+  ellipse 202+i*14 518-i*4 3 9 farbe 6a4a2a
+
+; große tanne vorne rechts
+nutze tanne 770 620 h=560 c=#1a3430 d=#0e1e1c
+
+; vögel
+linie 420,140 428,136 434,141 438,136 446,139 breite 1.4 farbe 3a4a5a
+linie 460,160 466,157 470,161 474,157 480,159 breite 1.2 farbe 3a4a5a

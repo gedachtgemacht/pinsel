@@ -1,0 +1,88 @@
+pinsel 1 800 600
+stil aquarell
+seed 23
+licht rechts kraft 0.35
+farbe gold f0bf7a
+farbe rosa e2a597
+farbe blau 6f84a8
+farbe rost b0543c
+farbe dunkel 3b3a52
+
+hintergrund farbe papier
+
+; himmel in getrennten lasuren, sonne als papier
+form 0,0! 800,0! 800,120 500,150 200,130 0,170 farbe blau+30 deckkraft 0.55 nass weich 10
+ellipse 560 220 440 130 farbe rosa+5 deckkraft 0.7 nass weich 25
+ellipse 610 265 280 90 farbe gold deckkraft 0.95 nass weich 22
+ellipse 615 275 80 45 aussparen weich 22
+
+; hafenzeile hinten, kühl gegen das licht
+form 0,320! 0,250! 35,236! 70,250! 70,232! 120,232! 120,255! 150,255! 150,190! 158,170! 166,190! 166,255! 210,255! 210,240! 245,226! 280,240! 280,262! 330,266! 390,280 470,292 800,300! 800,320! farbe blau+12 deckkraft 0.75 nass
+; warme fenster, wenige
+rechteck 85 242 5 6 farbe gold-10 deckkraft 0.8
+rechteck 225 246 5 6 farbe gold-10 deckkraft 0.8
+rechteck 40 256 4 5 farbe gold-10 deckkraft 0.7
+; mole
+form 0,328! 0,305 260,312 520,318 800,316 800,328! farbe blau-10 deckkraft 0.6 nass
+
+; wasser: oben licht vom himmel, unten kühler
+rechteck 0 326 800 274 farbe blau+25 deckkraft 0.5 nass
+ellipse 600 350 320 45 farbe gold deckkraft 0.8 nass weich 18
+form 560,330 670,330 740,600! 500,600! farbe gold deckkraft 0.55 nass weich 25
+rechteck 0 470 800 140 farbe blau deckkraft 0.55 nass weich 30
+; glitzer unter der sonne
+wiederhole i 8
+  ellipse 615+zuf(-30,30) 345+i*30 18+i*9 7+i aussparen weich 2
+; hafenzeile im wasser
+teil sph 0 656 kopfueber deckkraft 0.3 weich 6
+  form 0,328! 0,290 120,285 166,270 210,290 330,300 470,320 800,322 800,328! farbe blau nass
+
+; zweites boot rechts, gegenlicht, fern
+teil boot2 470 372 skala 0.55 deckkraft 0.8
+  form -150,-10! 0,-4 120,-14 175,-38! 160,0 110,28 -120,28 -148,12 farbe blau-15 nass
+  linie 30,-10 32,-210 breite 5..3 farbe blau-15
+  form -60,-8! -60,-48! -14,-48! -10,-8! farbe blau-5
+  teil r 0 56 kopfueber deckkraft 0.35 weich 5
+    form -150,-10! 0,-4 120,-14 175,-38! 160,0 110,28 -120,28 -148,12 farbe blau-15 nass
+
+; drittes boot, ganz fern rechts
+teil boot3 720 338 skala 0.3 deckkraft 0.6
+  form -150,-10! 0,-4 120,-14 175,-38! 160,0 110,28 -120,28 -148,12 farbe blau nass
+  linie 30,-10 32,-210 breite 6..4 farbe blau
+
+; hauptboot, blickpunkt am linken drittel
+teil boot 255 455
+  ; spiegelung, gebrochen
+  teil r 0 60 kopfueber deckkraft 0.45 weich 4
+    form -150,-10! 0,-4 120,-14 175,-38! 160,0 110,28 -120,28 -148,12 farbe rost-10 nass
+    linie 34,30 36,180 breite 4..2 farbe dunkel deckkraft 0.6 nass
+  wiederhole j 6
+    ellipse zuf(-120,140) 70+j*14 zuf(30,70) 2.5 aussparen
+  ellipse 15 30 185 8 farbe dunkel deckkraft 0.6 weich 2
+  ; rumpf
+  form -150,-10! 0,-4 120,-14 175,-38! 160,0 110,28 -120,28 -148,12 farbe rost-12
+  form -146,8! 0,12 140,0 166,-8! 110,28 -120,28 farbe dunkel deckkraft 0.5 flach
+    linie -150,-6 0,0 120,-10 176,-34 breite 5 farbe papier deckkraft 0.5
+  ; steuerhaus
+  form -70,-8! -70,-58! -10,-58! -6,-8! farbe blau+28
+  form -40,-8! -40,-58! -10,-58! -6,-8! farbe blau+10 deckkraft 0.6 nass
+  rechteck -62 -50 14 13 farbe f2b56a deckkraft 0.9
+  form -78,-56! -2,-56! -2,-64! -78,-64! farbe blau-15
+  ; mast, tauwerk
+  linie 32,-8 36,-230 breite 5..2.5 farbe dunkel
+  linie 36,-220 172,-36 breite 1 farbe dunkel deckkraft 0.6
+  linie 36,-140 90,-150 breite 2 farbe dunkel deckkraft 0.8
+  ; ein licht am mast
+  kreis 36 -170 16 farbe gold deckkraft 0.6 nass weich 5
+  kreis 36 -170 5 farbe f6a64a
+
+; möwen
+linie 455,175 466,167 477,176 breite 2 farbe dunkel deckkraft 0.7
+linie 505,148 512,143 519,148 breite 1.5 farbe dunkel deckkraft 0.55
+
+; dalben vorne rechts, rahmt das bild
+teil dalben 712 600 drehung 3
+  form -16,0! -18,-150 -10,-176 6,-172 12,-150 10,0! farbe blau-25 deckkraft 0.85
+    form 0,0! 0,-180 14,-180 14,0! farbe blau+10 deckkraft 0.5 nass
+  form 34,0! 33,-96 40,-108 50,-104 52,0! farbe blau-15 deckkraft 0.75 nass
+  linie -2,-120 30,-90 90,-75 breite 2 farbe rost deckkraft 0.7

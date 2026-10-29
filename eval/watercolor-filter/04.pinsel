@@ -1,0 +1,124 @@
+pinsel 1 800 600
+stil aquarell
+seed 44
+licht oben-links kraft 0.55
+farbe haut d9a07c
+farbe bart dcd8d0
+farbe mantel 26324a
+farbe pulli c9c0ae
+farbe muetze 8a2e2a
+farbe dunkel 2a1c16
+hintergrund verlauf 4e6470 3a4c58 22303a 0
+
+; hafen im unschärfe-hintergrund
+rechteck 0 380 800 220 farbe 2a3e48 deckkraft 0.6 weich 20 flach
+form 40,400 120,380 260,384 300,410 260,430 60,430 farbe 1c2830 deckkraft 0.7 weich 10 flach
+linie 150,382 150,160 breite 5 farbe 1c2830 deckkraft 0.6 weich 5
+linie 150,200 230,370 breite 2 farbe 1c2830 deckkraft 0.5 weich 4
+linie 640,400 650,140 breite 5 farbe 1c2830 deckkraft 0.5 weich 6
+wiederhole i 14
+  kreis 400+sin(i*67)*390 330+sin(i*29)*80 10+sin(i*13)*6 farbe ffc880 deckkraft 0.3 weich 8 flach
+kreis 140 120 220 farbe a8c0c8 deckkraft 0.25 weich 60 flach
+
+teil fischer 400 260
+  ; mantel
+  form -290,350! -268,210 -190,150 -90,118 0,114 90,118 190,150 268,210 290,350! farbe mantel textur korn 3 schatten
+    form -268,210 -190,150 -150,170 -200,240 -240,350 -290,350 farbe mantel+12 deckkraft 0.5 weich 6
+    linie 150,180 190,260 205,350 breite 3 farbe mantel-30 deckkraft 0.6
+    linie -150,180 -190,260 -205,350 breite 3 farbe mantel-30 deckkraft 0.6
+  ; pullover mit zopfmuster
+  form -112,124 -60,100 0,94 60,100 112,124 96,350! -96,350! farbe pulli textur korn 2
+    wiederhole i 6
+      linie -75+i*30,120 -65+i*30,160 -75+i*30,200 -65+i*30,240 -75+i*30,280 -65+i*30,320 -75+i*30,360 breite 7 farbe pulli-14 deckkraft 0.7
+    form 30,100 112,124 96,350 40,350 farbe 1a2028 deckkraft 0.25
+  ; aufschläge
+  form -112,124! -70,210 -50,350! -132,350! -156,200 farbe mantel+6 schatten
+    linie -112,124 -70,210 -50,350 breite 2 farbe mantel-25
+  form 112,124! 70,210 50,350! 132,350! 156,200 farbe mantel-4 schatten
+    linie 112,124 70,210 50,350 breite 2 farbe mantel-25
+  ; hals
+  form -50,60 50,60 56,120 0,130 -56,120 farbe haut-18
+  ; ohren
+  teil ohren 0 0 symmetrisch
+    ellipse -90 10 17 30 farbe haut-6
+      linie -86,-6 -94,8 -90,26 breite 3 farbe haut-30 deckkraft 0.6
+  ; gesicht
+  form 0,-122 55,-114 86,-72 93,-10 87,40 70,90 40,126 0,138 -40,126 -70,90 -87,40 -93,-10 -86,-72 -55,-114 farbe haut textur korn 3 texturfarbe haut-12
+    ellipse -52 42 26 20 farbe c8705e deckkraft 0.35 weich 8
+    ellipse 52 42 26 20 farbe c8705e deckkraft 0.35 weich 8
+    form 40,-110 93,-60 93,90 40,126 farbe 6a3a28 deckkraft 0.18 weich 10
+    linie -55,-42 -20,-47 20,-46 55,-40 breite 2 farbe haut-28 deckkraft 0.6
+    linie -48,-32 -10,-36 30,-34 50,-30 breite 1.8 farbe haut-28 deckkraft 0.5
+    linie -40,-22 0,-25 36,-22 breite 1.5 farbe haut-26 deckkraft 0.4
+    linie -4,-20 -6,-8 breite 1.5 farbe haut-30 deckkraft 0.5
+    linie 6,-20 8,-8 breite 1.5 farbe haut-30 deckkraft 0.5
+    linie -62,30 -70,50 -72,70 breite 2 farbe haut-30 deckkraft 0.5
+    linie 62,30 70,50 72,70 breite 2 farbe haut-30 deckkraft 0.5
+    kreis -64 -30 3 farbe a86a4a deckkraft 0.4
+    ellipse 0 -46 100 14 farbe 5a2a1c deckkraft 0.4 weich 6
+    ellipse 0 72 34 10 farbe 5a2a1c deckkraft 0.35 weich 5
+    kreis 58 -36 2.5 farbe a86a4a deckkraft 0.4
+    kreis -70 -16 2 farbe a86a4a deckkraft 0.35
+  ; mütze
+  form -100,-52 -98,-100 -70,-150 0,-170 70,-150 98,-100 100,-52 farbe muetze textur striche 2 texturfarbe muetze-15
+    wiederhole i 22
+      linie -100+i*10,-170 -100+i*10,-50 breite 3 farbe muetze-16 deckkraft 0.6
+  form -104,-90 0,-96 104,-90 106,-50 0,-44 -106,-50 farbe muetze+6 textur striche 2 texturfarbe muetze-10
+    wiederhole i 22
+      linie -105+i*10,-96 -105+i*10,-44 breite 3.5 farbe muetze-14 deckkraft 0.6
+    linie -106,-50 0,-44 106,-50 breite 4 farbe muetze-30 deckkraft 0.6
+  ; augen
+  teil augen 0 0 symmetrisch
+    ellipse -38 6 26 14 farbe haut-22 deckkraft 0.45 weich 5 flach
+    form -54,7 -38,0 -22,6 -38,11 farbe efe6dc flach
+      kreis -37 6 5.5 farbe 5e7f96 flach
+      kreis -37 6 2.6 farbe 101010 flach
+      kreis -39 4 1.4 farbe ffffff flach
+    linie -56,7 -46,1 -36,-1 -22,4 breite 2.6 farbe dunkel
+    linie -52,15 -38,19 -24,15 breite 1.6 farbe haut-30 deckkraft 0.7
+    linie -50,22 -38,27 -26,23 breite 1.4 farbe haut-26 deckkraft 0.5
+    linie -60,4 -72,0 breite 1.4 farbe haut-30 deckkraft 0.6
+    linie -60,8 -73,9 breite 1.4 farbe haut-30 deckkraft 0.6
+    linie -59,12 -70,17 breite 1.4 farbe haut-30 deckkraft 0.6
+    form -64,-8 -48,-20 -28,-20 -14,-14 -18,-8 -34,-12 -50,-8 farbe bart textur striche 4 texturfarbe bart-20
+    linie -60,-10 -50,-22 -40,-18 breite 1.2 farbe ffffff deckkraft 0.7
+    linie -30,-20 -18,-17 -12,-12 breite 1.2 farbe bart-25 deckkraft 0.7
+    linie -48,30 -54,58 -44,78 breite 2 farbe haut-28 deckkraft 0.5
+  ; bart
+  form -90,0 -84,60 -94,120 -76,180 -44,222 0,240 44,222 76,180 94,120 84,60 90,0 70,40 46,66 20,76 0,78 -20,76 -46,66 -70,40 farbe bart textur striche 6 texturfarbe bart-22
+    form 30,60 94,0 94,200 30,240 farbe 6a6058 deckkraft 0.25 weich 10
+    ellipse 0 100 58 18 farbe 4a4038 deckkraft 0.45 weich 8
+    ellipse 0 236 80 30 farbe 6a6058 deckkraft 0.3 weich 10
+    wiederhole i 9
+      linie -70+i*17,90 -64+i*17,130 -74+i*17,170 -66+i*17,215 breite 5..1 farbe bart-25 deckkraft 0.35
+    wiederhole i 9
+      linie -62+i*17,96 -56+i*17,136 -66+i*17,176 -58+i*17,210 breite 4..1 farbe f8f6f2 deckkraft 0.5
+    wiederhole i 18
+      linie -80+i*9.4,40+sin(i*40)*20 -84+i*9.4,120 -76+i*9.4,200 breite 1.4 farbe ffffff deckkraft 0.4
+    wiederhole i 18
+      linie -76+i*9.4,60 -72+i*9.4,140 -80+i*9.4,220 breite 1.4 farbe bart-30 deckkraft 0.4
+  ; nase
+  form 0,-8 11,8 16,32 31,48 28,64 10,70 0,66 -10,70 -28,64 -31,48 -16,32 -11,8 farbe haut+4
+    ellipse 0 50 24 15 farbe c0604e deckkraft 0.45 weich 6
+    form 8,0 16,32 31,48 28,64 10,68 14,50 farbe 5a2a1c deckkraft 0.5 weich 3
+    ellipse -8 46 7 5 farbe ffffff deckkraft 0.4 weich 3
+    linie -6,0 -8,30 breite 3 farbe ffffff deckkraft 0.25 weich 2
+  ellipse -12 63 6 3.5 farbe 4a2820 flach
+  ellipse 12 63 6 3.5 farbe 4a2820 flach
+  linie -30,44 -34,58 -26,68 breite 2 farbe haut-30 deckkraft 0.6
+  linie 30,44 34,58 26,68 breite 2 farbe haut-35 deckkraft 0.6
+  linie -16,34 -30,46 -30,62 breite 2.2 farbe haut-35 deckkraft 0.5
+  linie 16,34 30,46 30,62 breite 2.4 farbe haut-40 deckkraft 0.7
+  ; schnurrbart
+  form 0,66 26,62 56,74 76,98 58,100 32,88 0,86 -32,88 -58,100 -76,98 -56,74 -26,62 farbe bart+4 textur striche 6 texturfarbe bart-20
+    form 0,66 60,70 80,100 20,100 farbe 6a6058 deckkraft 0.2
+  ; pfeife
+  linie 26,92 54,108 80,126 breite 8..6 farbe 3a2418
+  form 72,118! 106,118! 104,160 92,174 78,166 farbe 6e3c1e textur schraffur 2 texturfarbe 4a2a14 schatten
+    linie 76,120 80,160 breite 3 farbe a86a3a deckkraft 0.6
+  ellipse 89 119 17 5 farbe 1e120c
+  kreis 89 118 7 farbe ff8a40 weich 3 flach
+  kreis 89 116 18 farbe ff9a50 deckkraft 0.25 weich 8 flach
+  ; rauch
+  linie 90,108 82,70 98,30 86,-20 104,-70 96,-130 breite 14..4 farbe dfe6ea deckkraft 0.55 weich 5
+  linie 92,100 104,60 94,20 112,-30 breite 6..2 farbe ffffff deckkraft 0.5 weich 2

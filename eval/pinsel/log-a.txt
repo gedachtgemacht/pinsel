@@ -1,0 +1,6 @@
+01 renders=4 fehler=2 bytes=4905 | Der symmetrische Kopf-Teil malte die Kopfform gespiegelt über das erste Auge, Grundformen mussten in einen eigenen, nicht symmetrischen Teil.
+02 renders=3 fehler=0 bytes=5898 | Gischt und Lichtkegel richtig zu dosieren, ohne Verlauf ins Transparente wird der Kegel entweder flau oder ein harter Balken.
+03 renders=3 fehler=0 bytes=5527 | Die Spiegelung brauchte eine deterministische Landschafts-Vorlage (sin statt zuf/streue) und einen Teil mit drehung 180 plus spiegel als Kopfstand-Trick.
+04 renders=4 fehler=0 bytes=6944 | Die Nase plastisch vom Gesicht abzusetzen, Hautfarbe auf Hautfarbe bleibt trotz Licht und Schattenformen flach.
+05 renders=3 fehler=0 bytes=5665 | Äpfel sahen mit zu kräftigen Streifen wie Paprika aus, und das transparente Glas musste aus Deckkraft-Flächen und Glanzlinien gebaut werden.
+SPEC: Unklar war, dass textur nicht als eingerückte Kind-Zeile geht, dass Rechnen mit Parameter-Farben (c-25) scheitert, ob reine Ziffern-Hexwerte als Parameter (z. B. 272842) als Zahl gelesen werden, um welchen Punkt drehung bei teil dreht, ob zuf in vorlage/streue bei zwei nutze-Aufrufen gleich ausfällt und ob deckkraft auf Elternformen auf Kinder wirkt; es fehlen ein senkrechtes Spiegeln, ein Verlauf zu transparent und ein radiales Weich-Ausblenden für Vignetten.

@@ -1,0 +1,165 @@
+pinsel 1 800 600
+seed 8
+licht oben-links kraft 0.5
+farbe moertel b8ad98
+farbe rahmen 2f5a4c
+farbe rost a85a2a
+farbe chrom c4c4bc
+hintergrund moertel
+
+; backsteinmauer
+rechteck 0 0 800 490 farbe moertel textur korn 5 flach
+  wiederhole r 25
+    wiederhole c 15
+      rechteck -40+c*58+cos(r*180)*14 r*20+1 55 18 farbe b25a3c-zuf(0,32) rund 2 textur korn 4
+  rechteck 0 0 800 490 verlauf 000000 000000 90 deckkraft 0 flach
+  ellipse 120 60 260 140 farbe fff0d0 weich 60 deckkraft 0.18 flach
+  ellipse 700 420 220 120 farbe 201010 weich 60 deckkraft 0.25 flach
+  ; ausgewaschene stellen
+  ellipse 300 120 60 30 farbe d8c8b0 weich 12 deckkraft 0.25 flach
+  ellipse 520 200 40 60 farbe 4a3a30 weich 18 deckkraft 0.2 flach
+; sockel
+rechteck 0 470 800 22 farbe 6a625a textur korn 5
+
+; boden: pflaster
+rechteck 0 490 800 110 verlauf 8a8278 6a645c 90 flach
+  wiederhole r 4
+    wiederhole c 12
+      rechteck -30+c*72+cos(r*180)*20 494+r*28 68 25 farbe 8a8478-zuf(0,25) rund 5 rand 5a544c 1.5 textur korn 4
+  rechteck 0 490 800 12 farbe 302820 weich 6 deckkraft 0.35 flach
+
+; grasbueschel an der mauer
+vorlage gras
+  linie 0,0 -6,-14 -10,-22 breite 2..0.5 farbe 5a7a34+z*20
+  linie 0,0 1,-18 3,-28 breite 2..0.5 farbe 4a6a2c+z*20
+  linie 0,0 6,-12 12,-18 breite 2..0.5 farbe 6a8a3c
+streue gras 18 bereich 0 486 600 10 skala 0.6..1.2
+
+; ring als geschlossene linie (kreis ohne farbe wird gefuellt)
+vorlage ring r=80 c=0a0a0a b=2
+  linie r,0 cos(30)*r,sin(30)*r cos(60)*r,sin(60)*r 0,r cos(120)*r,sin(120)*r cos(150)*r,sin(150)*r -r,0 cos(210)*r,sin(210)*r cos(240)*r,sin(240)*r 0,-r cos(300)*r,sin(300)*r cos(330)*r,sin(330)*r r,0 cos(30)*r,sin(30)*r breite b farbe c
+
+; schatten des rads auf mauer und boden
+ellipse 420 532 260 12 farbe 201a14 weich 10 deckkraft 0.4 flach
+teil radschatten 18 12 deckkraft 0.18
+  nutze ring 250 440 r=84 b=9
+  nutze ring 565 440 r=84 b=9
+  linie 250,440 362,312 532,318 545,362 395,455 250,440 breite 9 farbe 000000 weich 4
+  rechteck 560 255 85 55 farbe 000000 weich 4
+
+; rad
+vorlage rad
+  wiederhole i 18
+    linie 0,0 cos(i*20+5)*76,sin(i*20+5)*76 breite 1.2 farbe chrom-10
+  nutze ring 0 0 r=77 c=9a9a92 b=4
+  nutze ring 0 0 r=76 c=e0e0d8 b=1
+  nutze ring 0 0 r=84 c=1e1c1a b=9
+  nutze ring 0 0 r=88.5 c=14121a b=1.5
+  nutze ring 0 0 r=81 c=3a3632 b=1
+  kreis 0 0 8 radial f0f0e8 6a6a62
+  kreis 0 0 3 farbe 4a4a44 flach
+
+vorlage schutzblech
+  linie cos(-175)*96,sin(-175)*96 cos(-140)*96,sin(-140)*96 cos(-100)*96,sin(-100)*96 cos(-60)*96,sin(-60)*96 cos(-20)*96,sin(-20)*96 breite 6 farbe rahmen
+  linie cos(-160)*96,sin(-160)*96-2 cos(-100)*96,sin(-100)*96-2 cos(-45)*96,sin(-45)*96-2 breite 1.5 farbe rahmen+35
+
+nutze rad 250 440
+nutze rad 565 440
+nutze schutzblech 250 440
+nutze schutzblech 565 440 drehung 10
+
+; rahmen
+linie 250,440 395,455 breite 6 farbe rahmen
+linie 250,440 362,316 breite 6 farbe rahmen
+linie 395,455 360,300 breite 10 farbe rahmen
+linie 362,318 532,322 breite 9 farbe rahmen
+linie 395,455 545,362 breite 10 farbe rahmen
+linie 530,308 545,362 breite 13 farbe rahmen-15
+linie 545,362 555,404 565,440 breite 6 farbe rahmen
+; glanzkanten
+linie 368,320 528,324 breite 2 farbe rahmen+45 deckkraft 0.7
+linie 400,450 540,366 breite 2 farbe rahmen+45 deckkraft 0.7
+; goldene linien und rost
+linie 470,321 500,321.6 breite 3 farbe d8b050
+kreis 440 410 4 farbe rost deckkraft 0.8 flach
+kreis 452 404 2.5 farbe rost deckkraft 0.7 flach
+kreis 300 446 3 farbe rost deckkraft 0.8 flach
+kreis 382 400 3 farbe rost deckkraft 0.7 flach
+kreis 520 322 3 farbe rost deckkraft 0.7 flach
+kreis 545 380 2.5 farbe rost deckkraft 0.7 flach
+
+; sattel mit federn
+linie 360,300 352,272 breite 6 farbe chrom
+linie 340,272 344,282 338,290 346,296 breite 2 farbe 5a5a54
+linie 372,270 376,280 370,288 378,294 breite 2 farbe 5a5a54
+form 318,262 340,252 385,256 392,262 380,272 350,276 326,272 verlauf 6a3e22 3a2010 90 schatten
+  linie 322,264 388,261 breite 1 farbe 9a6a40 deckkraft 0.6
+kreis 386 266 1.5 farbe d8c8a0 flach
+
+; lenker
+linie 530,308 528,282 breite 5 farbe chrom
+linie 528,282 512,278 490,286 476,296 breite 5 farbe chrom
+linie 484,290 466,300 breite 9 farbe 5a3420
+kreis 512 276 6 radial ffffff 9a9a90
+; korb
+rechteck 562 250 86 60 farbe a8824a rund 5 textur schraffur 7 texturfarbe 6a4a24 schatten
+  wiederhole i 8
+    linie 570+i*11,250 570+i*11,310 breite 1.5 farbe 6a4a24
+rechteck 558 246 94 8 farbe 8a6434 rund 4
+linie 548,320 600,312 640,310 breite 3 farbe 4a4a44
+; blumen im korb
+linie 590,250 584,226 breite 2 farbe 4a7a30
+linie 610,250 618,220 breite 2 farbe 4a7a30
+linie 630,250 640,232 breite 2 farbe 4a7a30
+ellipse 578 238 9 4 drehung -40 farbe 5a8a38
+ellipse 628 238 9 4 drehung 30 farbe 5a8a38
+teil blume1 584 222
+  wiederhole i 6
+    ellipse cos(i*60)*6 sin(i*60)*6 6 3.5 drehung i*60 farbe f8f4e8
+  kreis 0 0 3.5 farbe f0c030
+teil blume2 618 216
+  wiederhole i 6
+    ellipse cos(i*60)*6 sin(i*60)*6 6 3.5 drehung i*60 farbe e84a5a
+  kreis 0 0 3.5 farbe 5a2a1a
+teil blume3 641 229 skala 0.8
+  wiederhole i 6
+    ellipse cos(i*60)*6 sin(i*60)*6 6 3.5 drehung i*60 farbe f0b030
+  kreis 0 0 3.5 farbe 8a4a1a
+
+; antrieb
+nutze ring 395 455 r=22 c=6a6a62 b=4
+wiederhole i 5
+  linie 395,455 395+cos(i*72)*20,455+sin(i*72)*20 breite 2 farbe 6a6a62
+nutze ring 250 440 r=9 c=6a6a62 b=3
+linie 250,431 395,433 breite 2 farbe 3a3a36
+linie 250,449 395,477 breite 2 farbe 3a3a36
+linie 395,455 418,494 breite 5 farbe 5a5a54
+rechteck 406 492 26 7 farbe 2a2826 rund 2
+linie 395,455 376,418 breite 5 farbe 5a5a54
+rechteck 364 414 24 7 farbe 2a2826 rund 2
+kreis 395 455 5 farbe chrom
+; gepaecktraeger hinten
+linie 250,440 300,370 breite 2.5 farbe 5a5a54
+linie 210,372 330,372 breite 3 farbe 4a4a44
+linie 362,322 330,372 breite 2.5 farbe 5a5a54
+; rueckstrahler
+ellipse 166 400 4 8 farbe c02a1a drehung -20
+
+; efeu
+vorlage efeu
+  teil l 0 0 drehung -70+z*140
+    linie 0,0 0,-8 breite 1.5 farbe 4a5a28
+    form 0,-6! -12,-4 -22,-14 -14,-20 -16,-32 -6,-30 0,-42 6,-30 16,-32 14,-20 22,-14 12,-4 farbe 2e5e28+z*30 rand 1e3e18 0.8
+      linie 0,-6 0,-40 breite 1 farbe 8ab070 deckkraft 0.7
+      linie 0,-10 -16,-24 breite 0.8 farbe 8ab070 deckkraft 0.6
+      linie 0,-10 16,-24 breite 0.8 farbe 8ab070 deckkraft 0.6
+linie 730,600 712,520 735,420 700,320 726,220 690,120 712,0 breite 5..2 farbe 5a4a2a
+linie 735,420 772,350 800,300 breite 3..1.5 farbe 5a4a2a
+linie 700,320 668,260 655,190 672,130 breite 3..1 farbe 5a4a2a
+linie 712,520 660,500 610,505 breite 3..1 farbe 5a4a2a
+linie 726,220 780,160 800,150 breite 3..1 farbe 5a4a2a
+streue efeu 55 entlang 730,600 712,520 735,420 700,320 726,220 690,120 712,0 skala 0.6..1.1
+streue efeu 18 entlang 735,420 772,350 800,300 skala 0.5..0.9
+streue efeu 16 entlang 700,320 668,260 655,190 672,130 skala 0.4..0.9
+streue efeu 12 entlang 712,520 660,500 610,505 skala 0.5..0.9
+streue efeu 14 entlang 726,220 780,160 800,150 skala 0.5..0.9

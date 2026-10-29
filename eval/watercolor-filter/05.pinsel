@@ -1,0 +1,124 @@
+pinsel 1 800 600
+stil aquarell
+seed 9
+licht oben-links kraft 0.6
+farbe holz 7a4826
+farbe schale e6dac2
+farbe glasur 2c4a7c
+farbe wein 5e0816
+hintergrund verlauf 3e3024 2a2018 17120d 0
+
+; licht auf der wand
+rechteck 0 0 800 380 farbe 3a2c20 deckkraft 0.25 flach textur korn 2 texturfarbe 1a120c
+kreis 180 120 320 farbe 7a6040 deckkraft 0.45 weich 80 flach
+
+; tisch
+rechteck 0 378 800 222 verlauf holz+8 holz holz-20 90 textur korn 3 texturfarbe holz-22
+  wiederhole i 14
+    linie 0,392+i*13+sin(i*40)*3 200,396+i*13 420,390+i*13+sin(i*70)*4 640,395+i*13 800,391+i*13 breite 1.2 farbe holz-28 deckkraft 0.5
+  linie 0,440 800,440 breite 2 farbe 2a1608 deckkraft 0.7
+  linie 0,505 800,505 breite 2 farbe 2a1608 deckkraft 0.7
+  ellipse 160 470 260 60 farbe c09060 deckkraft 0.2 weich 30
+  ellipse 560 420 70 20 farbe 3a1a10 deckkraft 0.3 weich 8
+rechteck 0 556 800 44 verlauf holz-10 holz-35 90 textur korn 2 texturfarbe holz-40
+linie 0,557 800,557 breite 2 farbe c08a58 deckkraft 0.6
+rechteck 0 370 800 10 farbe 1a120c deckkraft 0.6 weich 4 flach
+
+; schlagschatten der dinge
+ellipse 380 508 200 26 farbe 120a06 deckkraft 0.55 weich 14 flach
+ellipse 660 515 70 14 farbe 120a06 deckkraft 0.5 weich 10 flach
+ellipse 175 535 70 14 farbe 120a06 deckkraft 0.5 weich 10 flach
+ellipse 640 520 34 10 farbe c02030 deckkraft 0.18 weich 10 flach
+
+vorlage apfel r=50 c=#b8202a h=#e86040 s=#ffe0a0
+  form -r*1.06,-r*0.05 -r*0.95,-r*0.62 -r*0.5,-r*0.92 -r*0.1,-r*0.76 r*0.12,-r*0.78 r*0.52,-r*0.92 r*0.96,-r*0.62 r*1.06,-r*0.05 r*0.86,r*0.6 r*0.42,r*0.9 0,r*0.86 -r*0.42,r*0.9 -r*0.86,r*0.6 farbe c textur punkte 1 texturfarbe s schatten
+    ellipse -r*0.35 -r*0.2 r*0.6 r*0.6 farbe h deckkraft 0.35 weich r*0.25
+    linie -r*0.4,-r*0.75 -r*0.62,-r*0.1 -r*0.45,r*0.6 breite r*0.06 farbe h deckkraft 0.25 weich 3
+    linie r*0.25,-r*0.75 r*0.42,0 r*0.3,r*0.7 breite r*0.05 farbe h deckkraft 0.18 weich 3
+    ellipse r*0.5 r*0.4 r*0.7 r*0.7 farbe 1a0806 deckkraft 0.4 weich r*0.25
+    ellipse -r*0.45 -r*0.42 r*0.2 r*0.12 farbe ffffff deckkraft 0.65 weich r*0.05 drehung -30
+    ellipse 0 -r*0.7 r*0.2 r*0.08 farbe 2a1008 deckkraft 0.5 weich 2
+  linie 0,-r*0.7 r*0.06,-r*0.95 r*0.18,-r*1.12 breite 3.5..2 farbe 4a2a14
+
+vorlage beere r=11 c=#4a2050
+  kreis 0 0 r farbe c
+    kreis r*0.35 r*0.4 r*0.8 farbe 120612 deckkraft 0.4 weich 2
+    kreis -r*0.35 -r*0.35 r*0.28 farbe ffffff deckkraft 0.55 weich 1.5
+  kreis 0 0 r farbe 9a8ab0 deckkraft 0.12 flach
+
+; schale: innenseite
+ellipse 330 400 170 34 farbe schale-30
+  ellipse 330 420 150 30 farbe 2a1e14 deckkraft 0.65 weich 10
+
+; birne hinten
+teil birne 410 335 drehung 14
+  form 0,-92 12,-82 18,-56 30,-26 46,10 44,46 24,64 0,68 -24,64 -44,46 -46,10 -30,-26 -18,-56 -12,-82 verlauf c8c040 b8a832 8a8a28 0 textur punkte 3 texturfarbe 6a5a18 schatten
+    ellipse 22 30 30 40 farbe 4a3a10 deckkraft 0.35 weich 10
+    ellipse -16 -10 8 22 farbe ffffff deckkraft 0.35 weich 4
+    ellipse 10 50 30 18 farbe c86030 deckkraft 0.25 weich 8
+  linie 0,-88 3,-102 8,-112 breite 5..3 farbe 6a4a24
+  form 6,-102 20,-116 36,-112 22,-100 farbe 5a7a2a
+    linie 8,-102 34,-111 breite 1 farbe 3a5a1a
+
+; äpfel in der schale
+nutze apfel 255 362 r=48 c=#7aa83a h=#c8e070 s=#e8f0a0
+nutze apfel 440 388 r=44 c=#a01e24 h=#e0703a
+nutze apfel 335 378 r=54 c=#b8202a h=#f0a040
+
+; schale: vorderseite
+form 160,400 172,442 218,480 280,498 330,502 380,498 442,480 488,442 500,400 470,420 400,432 330,435 260,432 190,420 farbe schale textur korn 2 schatten
+  linie 165,430 220,468 330,488 440,468 495,430 breite 12 farbe glasur deckkraft 0.9
+  linie 170,450 220,478 330,494 breite 3 farbe glasur deckkraft 0.6
+  wiederhole i 9
+    kreis 200+i*32 452+sin(i*20)*14 4 farbe glasur
+  ellipse 440 470 90 50 farbe 2a1a10 deckkraft 0.3 weich 14
+linie 160,400 190,421 260,433 330,436 400,433 470,421 500,400 breite 3 farbe ffffff deckkraft 0.6
+form 290,498! 370,498! 384,516! 276,516! farbe schale-12
+ellipse 330 516 54 6 farbe schale-25
+
+; trauben über den rand
+linie 205,350 212,330 226,318 breite 4 farbe 5a3a1a
+form 200,345 170,320 150,330 160,350 140,365 170,370 195,358 farbe 4a6a2a
+  linie 200,345 160,345 breite 1.2 farbe 2a4a1a
+teil traube 205 362 drehung -10
+  nutze beere -22 0
+  nutze beere 0 -2
+  nutze beere 22 0
+  nutze beere -32 18
+  nutze beere -11 18
+  nutze beere 11 18
+  nutze beere 32 16
+  nutze beere -22 36
+  nutze beere 0 37
+  nutze beere 22 34
+  nutze beere -30 54
+  nutze beere -9 55
+  nutze beere 12 52
+  nutze beere -18 72
+  nutze beere 3 72
+  nutze beere -8 90
+  nutze beere -20 106 r=10
+
+; einzelner apfel auf dem tisch
+nutze apfel 150 500 r=42 c=#c02a24 h=#f0b040
+; lose beeren
+nutze beere 520 520 r=10
+nutze beere 540 528 r=10
+nutze beere 505 535 r=10
+linie 520,512 528,500 536,496 breite 2..1 farbe 5a3a1a
+
+; weinglas
+teil glas 620 300
+  linie 0,118 0,214 breite 7 farbe e0e8ec deckkraft 0.45
+  linie -2,124 -2,208 breite 2 farbe ffffff deckkraft 0.8
+  ellipse 0 216 44 9 farbe e0e8ec deckkraft 0.35 flach
+  linie -42,216 0,224 42,216 breite 2 farbe ffffff deckkraft 0.7
+  form -45,0 -49,48 -40,92 -20,114 0,120 20,114 40,92 49,48 45,0 farbe c8d4dc deckkraft 0.12 flach
+  form -46,56 46,56 40,92 20,114 0,120 -20,114 -40,92 verlauf 9a1a2a wein 3a0410 0 deckkraft 0.92 flach
+    ellipse -18 80 10 24 farbe e04050 deckkraft 0.4 weich 4
+  ellipse 0 56 46 6 farbe 8a1626 flach
+  linie -45,0 -30,5 0,7 30,5 45,0 breite 1.6 farbe ffffff deckkraft 0.7
+  linie -45,0 -30,-5 0,-7 30,-5 45,0 breite 1.2 farbe ffffff deckkraft 0.35
+  linie -38,10 -42,50 -34,88 breite 4..1 farbe ffffff deckkraft 0.7
+  linie 40,20 44,50 breite 2..1 farbe ffffff deckkraft 0.4
+  linie -45,0 -49,48 -40,92 -20,114 0,120 20,114 40,92 49,48 45,0 breite 1.2 farbe ffffff deckkraft 0.35

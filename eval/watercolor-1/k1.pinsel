@@ -1,0 +1,45 @@
+pinsel 1 800 600
+stil aquarell
+seed 11
+licht oben-rechts kraft 0.3
+farbe himmel c9d6e3
+farbe gold f2dcb0
+farbe berg 8f94b0
+farbe tanne 34494a
+farbe see b4c4d2
+
+; erste lasur: oben fast papier, warmer streifen ueber dem horizont
+hintergrund verlauf fbf8f1 gold+18 gold+5 90
+
+; ferne bergkette, sehr blass, gezackte grate
+form 0,330 40,300 90,262! 130,282 190,230 235,190! 270,214 310,232 350,212 400,160 450,112! 490,150 540,205 590,188! 640,218 700,246! 760,226 800,240 800,345 0,345 farbe berg+28 deckkraft 0.5 weich 1 flach
+; naehere kette links, kraeftiger, ihr fuss loest sich im nebel auf
+form 0,345 0,300 50,286! 110,298 170,270! 230,292 290,312 360,330 420,345 farbe berg deckkraft 0.5 flach
+
+; nebelband: verschluckt die fuesse der berge
+ellipse 300 330 520 38 farbe ffffff deckkraft 0.8 weich 24 flach
+ellipse 650 320 300 30 farbe ffffff deckkraft 0.6 weich 20 flach
+
+; see, oben hell (spiegelt den himmel), unten kuehler
+rechteck -10 350 820 260 verlauf fbf8f1 gold+25 see+20 see+5 90 deckkraft 0.6 weich 10 flach
+
+; blickpunkt: dunkle landzunge mit tannen, linkes drittel
+vorlage tanne h=60
+  form 0,-h! -h*0.1,-h*0.7 -h*0.2,-h*0.35 -h*0.24,0! h*0.24,0! h*0.2,-h*0.35 h*0.1,-h*0.7 farbe tanne+z*25 flach
+
+; ferne tannen im nebel, nur geahnt
+teil ferne 0 0 deckkraft 0.22
+  streue tanne 9 bereich 330 344 180 8 skala 0.25..0.45 h=70
+form 90,374 170,364 250,367 300,375 250,380 120,381 farbe tanne+20 deckkraft 0.8 weich 1 flach
+streue tanne 7 bereich 120 360 110 14 skala 0.5..0.9 h=70
+nutze tanne 222 370 h=110
+nutze tanne 240 372 h=72
+nutze tanne 202 371 h=82
+; spiegelung, nach unten gestreckt und verwaschen
+wiederhole i 9
+  linie 130+i*14,384 130+i*14+zuf(-2,2),400+zuf(0,30) breite 8..1 farbe tanne+25 deckkraft 0.4 weich 2
+
+; ein kleiner kahn, zweiter, leiser punkt
+form 510,452! 548,452! 541,458 517,458 farbe tanne-5 flach
+linie 520,451 538,440 breite 1.2..0.6 farbe tanne deckkraft 0.7
+linie 470,462 590,462 breite 1 farbe see-20 deckkraft 0.3

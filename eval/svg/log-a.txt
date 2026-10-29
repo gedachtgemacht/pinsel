@@ -1,0 +1,5 @@
+01 renders=3 bytes=19543 | Den sitzenden Fuchs im Profil glaubwürdig zu bauen (Ohren, weiße Brust gegen schwarze Vorderbeine, Schwanz um die Pfoten) brauchte zwei Korrekturen.
+02 renders=2 bytes=16449 | Gischt an den Felsen sah zuerst wie Wattewolken aus und brauchte Turbulenz-Verdrängung plus Rauschmaske, um zerrissen zu wirken.
+03 renders=3 bytes=15944 | Die Spiegelung per gespiegeltem use mit Wellenfilter ging leicht, aber Dunst-/Nebelflächen hinterließen harte Kanten, bis sie über Verläufe und Maske ausliefen.
+04 renders=3 bytes=19739 | Das Gesicht lebendig statt starr zu machen war schwer: Augen wirkten aufgerissen, bis Schlupflider sie verengten, und die Brauen blieben lange zu dünn.
+05 renders=3 bytes=16598 | Die Tiefenstaffelung in der Schale (Früchte hinter dem vorderen Rand, aber vor dem hinteren Rand) und runde statt kreisrunde Äpfel brauchten Nacharbeit.

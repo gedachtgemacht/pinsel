@@ -1,0 +1,98 @@
+pinsel 1 800 600
+stil aquarell
+seed 11
+licht links kraft 0.5
+farbe fell d2652a
+farbe creme f4ece2
+farbe dunkel 2a1812
+farbe schnee e8eef8
+hintergrund verlauf 18203e 3b3566 8a5677 e88f6a f6c58a 90
+
+; sterne
+wiederhole i 45
+  kreis zuf(0,800) zuf(0,170) zuf(0.6,1.6) farbe ffffff deckkraft zuf(0.3,0.9) flach
+
+; abendglühen
+kreis 580 400 170 farbe ffb070 deckkraft 0.45 weich 60 flach
+kreis 580 408 30 farbe ffe6b8 weich 3 flach
+
+vorlage tanne h=120 c=#2a3a4a d=#1a2230 s=#e8eef8
+  rechteck -h*0.03 -h*0.12 h*0.06 h*0.14 farbe d flach
+  form 0,-h! h*0.16,-h*0.66! h*0.07,-h*0.66! h*0.25,-h*0.38! h*0.1,-h*0.38! h*0.34,-h*0.1! -h*0.34,-h*0.1! -h*0.1,-h*0.38! -h*0.25,-h*0.38! -h*0.07,-h*0.66! -h*0.16,-h*0.66! ecken farbe c
+    linie -h*0.17,-h*0.66 -h*0.05,-h*0.72 h*0.04,-h*0.7 breite h*0.03 farbe s deckkraft 0.8
+    linie -h*0.26,-h*0.38 -h*0.1,-h*0.45 h*0.06,-h*0.42 breite h*0.035 farbe s deckkraft 0.8
+    linie -h*0.35,-h*0.1 -h*0.15,-h*0.18 h*0.1,-h*0.15 breite h*0.04 farbe s deckkraft 0.8
+    linie h*0.02,-h*0.95 h*0.02,-h*0.1 breite h*0.12 farbe d deckkraft 0.35
+
+; ferner wald
+streue tanne 70 entlang 0,412 200,404 400,416 600,406 800,412 skala 0.45..0.9 h=120 c=#5d5280 d=#4a4068 s=#a89cc0
+rechteck 0 340 800 90 verlauf 8a5677 e9a98a 90 deckkraft 0.35 weich 12 flach
+streue tanne 40 entlang 0,425 250,418 500,428 800,420 skala 0.7..1.2 h=120 c=#33304f d=#25223a s=#c8bcd8
+
+; schneefeld
+form 0,420! 180,414 400,424 620,416 800,420! 800,600! 0,600! verlauf f0c8c0 c8c4dc 95a3cc 90 flach textur korn 3 texturfarbe ffffff
+  ellipse 600 440 220 14 farbe ffe0cc deckkraft 0.5 weich 6
+  ellipse 150 500 260 30 farbe b0b8dc deckkraft 0.5 weich 10
+  ellipse 640 540 300 40 farbe 8f9ac4 deckkraft 0.5 weich 12
+
+; vordere bäume am rand
+nutze tanne 40 560 h=480 c=#1e2036 d=#121424 s=#9aa4c8
+nutze tanne 780 580 h=520 c=#1c1e33 d=#101220 s=#9aa4c8
+nutze tanne 690 470 h=240 c=#272842 d=#181a2c s=#b4b8d4
+
+; zweige im schnee
+linie 560,520 575,490 572,470 breite 3..1 farbe 3a2a2a
+linie 572,492 590,480 breite 2..1 farbe 3a2a2a
+linie 140,560 150,530 165,515 breite 3..1 farbe 3a2a2a
+linie 150,532 132,515 breite 2..1 farbe 3a2a2a
+
+; schatten des fuchses
+ellipse 420 534 150 16 farbe 4a5080 deckkraft 0.4 weich 8 flach
+
+teil fuchs 360 530
+  ; körper
+  form -40,-205 40,-205 62,-160 78,-100 92,-40 86,-6 50,4 -50,4 -86,-6 -92,-40 -78,-100 -62,-160 farbe fell textur striche 3 texturfarbe fell-18
+    ellipse -66 -45 34 50 farbe fell-8
+    ellipse 66 -45 34 50 farbe fell-14
+    linie -95,-90 -60,-95 -40,-60 breite 2 farbe fell-25 deckkraft 0.6
+    linie 95,-90 60,-95 40,-60 breite 2 farbe fell-25 deckkraft 0.6
+    linie -92,-80 -96,-20 breite 10 farbe ffb070 deckkraft 0.5 weich 4
+    form 0,-215 36,-180 42,-120 24,-70 0,-55 -24,-70 -42,-120 -36,-180 farbe creme textur striche 2 texturfarbe creme-12
+  ; vorderbeine
+  teil beine 0 0 symmetrisch
+    form -34,-130 -14,-130 -12,-30 -13,-2 -36,-2 -36,-30 farbe fell-4 textur striche 2
+      form -40,-48! 0,-42! 0,10! -40,10! verlauf fell-10 dunkel dunkel 90
+    ellipse -26 -3 15 7 farbe dunkel+12
+  ; schwanz
+  form 60,-100 120,-84 160,-44 158,0 122,16 40,20 -40,18 -88,8 -82,-6 -20,0 50,-4 100,-20 112,-50 74,-74 farbe fell textur striche 3 texturfarbe fell-20
+    ellipse 140 -40 30 40 farbe fell-12 deckkraft 0.6
+    kreis -95 8 52 farbe creme textur striche 2 texturfarbe creme-12
+  ; kopf
+  teil ohren 0 -232 symmetrisch
+    form -18,-30 -42,-104! -66,-20 farbe fell-4
+      kreis -42 -104 26 farbe dunkel
+    form -26,-34 -43,-86! -56,-28 farbe 4a2a20
+      linie -30,-36 -42,-70 breite 3 farbe creme deckkraft 0.7
+      linie -50,-32 -44,-60 breite 3 farbe creme deckkraft 0.7
+  teil kopf 0 -232
+    form 0,-50 30,-46 52,-26 68,8 50,26 24,44 10,58 0,62 -10,58 -24,44 -50,26 -68,8 -52,-26 -30,-46 farbe fell textur striche 2 texturfarbe fell-15
+      ellipse 0 -34 22 14 farbe fell+10 deckkraft 0.5 weich 4
+      form -70,6 -50,26 -24,44 -10,58 0,64 -4,40 -14,26 -30,14 -50,4 farbe creme textur striche 2 texturfarbe creme-10
+      form 70,6 50,26 24,44 10,58 0,64 4,40 14,26 30,14 50,4 farbe creme-6 textur striche 2 texturfarbe creme-14
+      linie -12,-4 -6,20 -4,44 breite 3 farbe fell-20 deckkraft 0.5
+      linie 12,-4 6,20 4,44 breite 3 farbe fell-20 deckkraft 0.5
+      linie -66,-10 -70,10 breite 8 farbe ffb070 deckkraft 0.6 weich 3
+  teil gesicht 0 -232 symmetrisch
+    form -36,-6 -26,-12 -12,-7 -15,1 -29,1 farbe dunkel flach
+    ellipse -23 -6 6 4.5 farbe d08a20 flach
+    ellipse -23 -6 2 4 farbe 120804 flach
+    kreis -25 -8 1.4 farbe ffffff flach
+    ellipse 0 56 8 6 farbe 1a1010
+    kreis -3 54 1.6 farbe ffffff deckkraft 0.6 flach
+    linie 0,62 -7,68 -15,66 breite 1.5 farbe dunkel
+    linie -18,50 -46,44 -62,46 breite 0.8 farbe ffffff deckkraft 0.5
+    linie -18,54 -50,54 breite 0.8 farbe ffffff deckkraft 0.4
+
+; leichter schneefall
+wiederhole i 110
+  kreis zuf(0,800) zuf(0,600) zuf(0.8,2.4) farbe ffffff deckkraft zuf(0.4,0.9) flach

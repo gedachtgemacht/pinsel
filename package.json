@@ -1,0 +1,10 @@
+{
+  "name": "pinsel",
+  "version": "0.2.0",
+  "license": "MIT",
+  "repository": "github:gedachtgemacht/pinsel",
+  "description": "A text format for images written by language models, with a watercolor renderer. Compiles to SVG.",
+  "type": "module",
+  "bin": { "pinsel": "cli.js", "pinsel-mcp": "mcp.js" },
+  "main": "pinsel.js"
+}

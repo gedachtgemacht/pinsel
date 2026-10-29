@@ -1,0 +1,98 @@
+pinsel 1 800 600
+stil aquarell
+seed 14
+licht oben-links kraft 0.3
+farbe nacht 2f3f78
+farbe violett 5c4a86
+farbe gold f4c068
+farbe ocker d4843a
+hintergrund farbe papier
+
+; 1. helle lasur: warmes leuchten am ende der gasse, bleibt fast papier
+ellipse 470 300 260 220 radial gold+40 gold+10 ocker+30 nass deckkraft 0.7
+
+; 2. himmel: tiefes blau, nass, oben dunkler
+rechteck 0 0 800 260 verlauf nacht-15 nacht+5 violett+25 90 nass deckkraft 0.95
+
+; ferne beleuchtete fassade am ende der gasse
+form 418,215! 445,190! 470,212! 500,200! 525,222! 525,370! 418,370! verlauf gold+25 ocker+25 90 deckkraft 0.85
+  rechteck 432 250 10 18 farbe ocker deckkraft 0.6
+  rechteck 470 240 10 18 farbe ocker deckkraft 0.6
+  rechteck 500 255 9 16 farbe ocker deckkraft 0.5
+  rechteck 448 300 30 70 farbe ocker-10 deckkraft 0.5
+
+; linke haeuserzeile, nah dunkel, fern heller und waermer
+form 400,232! 425,226! 425,358! 400,372! verlauf violett+20 ocker+10 0 deckkraft 0.85
+form 330,150! 365,128! 400,160! 400,372! 330,413! verlauf violett nacht+20 0 deckkraft 0.9
+  kreis 400 330 60 radial gold+20 ocker+20 nass deckkraft 0.4
+form 190,60! 330,118! 330,413! 190,497! farbe violett-10 deckkraft 0.92
+  kreis 250 262 150 radial gold+30 ocker+15 violett nass deckkraft 0.75
+  form 225,300! 255,300! 255,355! 225,365! farbe gold+20 deckkraft 0.7
+  form 290,140! 310,146! 310,190! 290,188! farbe nacht-10 deckkraft 0.5
+form 0,0! 190,0! 190,497! 0,612! verlauf nacht-30 violett-20 0 deckkraft 0.97
+  form 60,110! 120,110! 120,215! 60,225! farbe gold+10 deckkraft 0.55
+    linie 90,110 90,220 breite 3 farbe nacht-20
+  rechteck 30 380 90 260 farbe nacht-30 deckkraft 0.6
+
+; rechte haeuserzeile
+form 515,240! 535,236! 535,385! 515,368! verlauf ocker+10 violett+20 0 deckkraft 0.85
+form 535,180! 552,170! 570,192! 570,415! 535,385! verlauf nacht+20 violett+5 0 deckkraft 0.9
+form 570,110! 605,80! 640,110! 640,474! 570,415! farbe violett-5 deckkraft 0.92
+  form 588,210! 618,218! 618,270! 588,262! farbe gold+25 deckkraft 0.7
+  kreis 600 300 70 radial gold+30 ocker+20 nass deckkraft 0.35
+form 640,0! 800,0! 800,612! 640,474! verlauf violett-20 nacht-30 0 deckkraft 0.97
+  form 680,150! 740,140! 740,250! 680,250! farbe nacht-20 deckkraft 0.5
+  form 670,330! 730,335! 730,520! 670,480! farbe nacht-30 deckkraft 0.5
+
+; pflaster: nass, nah dunkler
+form 0,612! 418,370! 525,370! 800,612! verlauf ocker+15 violett nacht-10 90 nass deckkraft 0.9
+  form 380,370 560,370 600,460 520,600 400,600 330,460 verlauf gold+20 ocker+20 violett+10 90 nass deckkraft 0.6
+
+; vorn dunkler, rahmt den blick zur gasse
+form 0,612! 300,480 340,530 300,612! farbe nacht-5 nass deckkraft 0.5
+form 800,612! 600,470 560,540 620,612! farbe nacht-5 nass deckkraft 0.5
+
+; spiegelung des leuchtens, senkrecht und gebrochen
+form 455,374 488,374 484,440 470,470 458,440 aussparen nass
+linie 468,440 474,500 466,540 breite 14..8 farbe gold+25 nass deckkraft 0.6
+linie 470,550 464,600 breite 10..16 farbe gold+20 nass deckkraft 0.5
+linie 452,470 448,520 breite 3..1 farbe gold+30 trocken deckkraft 0.6
+linie 492,480 496,560 breite 3..1 farbe gold+30 trocken deckkraft 0.6
+; spiegelung der hauptlaterne
+linie 250,500 246,540 252,580 breite 9..14 farbe gold+20 nass deckkraft 0.5
+linie 244,585 248,600 breite 8 farbe gold+25 trocken deckkraft 0.5
+
+; hauptlaterne links: lichthof auf der wand und in der luft
+kreis 250 262 90 radial gold+30 ocker+25 violett nass deckkraft 0.4
+kreis 250 262 55 radial gold+40 gold+10 nass deckkraft 0.7
+kreis 250 262 26 aussparen nass
+linie 190,226 232,226 246,236 breite 4 farbe nacht-35
+linie 236,240 250,228 264,240 breite 4 farbe nacht-35
+form 238,242! 262,242! 266,252 258,282! 242,282! 234,252 farbe gold+35 rand nacht-35 2
+kreis 250 260 6 aussparen
+linie 242,282 258,282 breite 3 farbe nacht-35
+
+; zweite laterne rechts, kleiner, ferner
+kreis 556 268 30 radial gold+35 ocker+30 nass deckkraft 0.55
+linie 570,250 558,253 breite 2 farbe nacht-30
+form 551,256! 561,256! 563,262 559,276! 553,276! 549,262 farbe gold+30 rand nacht-30 1.2
+
+; figur im gegenlicht, der blickpunkt
+form 452,334 457,331 462,335 463,352 461,372 457,372 456,360 454,372 450,372 449,352 farbe nacht-30
+kreis 456 326 4 farbe nacht-30
+linie 455,374 452,395 breite 5..1 farbe nacht nass deckkraft 0.35
+
+; schornsteine
+rechteck 350 120 8 22 farbe nacht-20 deckkraft 0.85
+rechteck 610 70 9 25 farbe nacht-25 deckkraft 0.85
+rechteck 545 160 6 16 farbe nacht-10 deckkraft 0.8
+
+; dunkle akzente: dachkanten
+linie 0,0 190,60 330,118 breite 6..2 farbe nacht-40 deckkraft 0.6
+linie 800,0 640,0 breite 6 farbe nacht-40 deckkraft 0.4
+
+; pflasterfugen, trocken, nur vorn
+linie 60,585 200,560 breite 2 farbe nacht-10 trocken deckkraft 0.45
+linie 140,520 280,505 breite 1.5 farbe nacht-10 trocken deckkraft 0.4
+linie 560,520 700,560 breite 2 farbe nacht-10 trocken deckkraft 0.45
+linie 600,580 760,600 breite 2 farbe nacht-10 trocken deckkraft 0.4

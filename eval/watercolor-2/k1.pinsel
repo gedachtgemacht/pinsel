@@ -1,0 +1,68 @@
+pinsel 1 800 600
+stil aquarell
+seed 11
+licht oben-rechts kraft 0.35
+farbe himmel 9fb6cf
+farbe fels 6c7896
+farbe tanne 2f4a52
+farbe gold eebc7a
+farbe dunkel 2c3340
+
+hintergrund farbe papier
+
+vorlage tanne h=60 c=2f4a52
+  form 0,-h -h*0.18,-h*0.45 -h*0.28,-h*0.05 0,0 h*0.28,-h*0.05 h*0.18,-h*0.45 farbe c+z*15 nass
+
+; himmel: warmer schein rechts oben, kühles blau links
+form 0,0! 800,0! 800,90 600,140 300,120 0,160 farbe himmel deckkraft 0.55 nass weich 14
+ellipse 610 150 260 120 radial gold+15 gold gold+30 deckkraft 0.75 nass weich 30
+ellipse 625 145 90 70 aussparen weich 45 deckkraft 0.8
+
+; ferner gipfel, blass und kühl
+form 120,300! 230,210 330,95 380,120 430,160 500,140 600,220 720,250 800,240 800,300! farbe fels+30 deckkraft 0.75 nass
+; licht auf der rechten gipfelseite aussparen
+form 330,98 300,150 250,215 200,260 330,270 345,160 farbe fels+5 deckkraft 0.45 nass
+
+; mittlere bergkette, bewaldet, dunkler
+form 0,320! 0,220 70,200 160,230 250,265 330,290 420,300 800,305! farbe fels-5 deckkraft 0.8 nass
+form 560,310! 650,270 740,255 800,262 800,310! farbe fels+10 deckkraft 0.6 nass
+
+; nebelband
+rechteck -20 262 840 70 farbe papier deckkraft 0.9 weich 22
+
+; tannen links, aus dem nebel tauchend
+streue tanne 14 bereich 0 280 260 30 skala 0.8..1.5 tiefe deckkraft 0.8 h=55
+nutze tanne 40 330 h=110
+nutze tanne 78 336 h=80
+nutze tanne 18 340 h=70
+
+; see
+rechteck 0 325 800 275 verlauf himmel+45 himmel+10 himmel-10 90 deckkraft 0.7 nass
+; spiegelung der berge
+teil spieg 0 640 kopfueber deckkraft 0.4 weich 5
+  form 120,310! 230,250 330,205 380,215 430,230 500,225 600,260 720,280 800,276 800,310! farbe fels+30 nass
+  form 0,320! 0,240 70,225 160,250 250,280 330,300 420,312 800,315! farbe fels deckkraft 0.8 nass
+  nutze tanne 40 315 h=110
+  nutze tanne 78 318 h=80
+; nebel auf dem wasser
+ellipse 430 336 470 26 farbe papier deckkraft 0.85 weich 18
+
+; lichtbahn auf dem wasser
+rechteck 0 470 800 140 farbe himmel-20 deckkraft 0.4 nass weich 25
+wiederhole i 13
+  rechteck 618-i*5-zuf(0,14) 350+i*19 10+i*7+zuf(0,22) 2+i*0.4 aussparen weich 1
+
+; blickpunkt: kahn mit stehender figur, am rechten drittel
+teil boot 530 440
+  ellipse 2 12 70 7 farbe dunkel deckkraft 0.25 nass weich 3
+  form -46,-2! 46,-4! 38,6 -36,7 farbe dunkel
+  form -6,-3! -5,-26 -2,-32 2,-26 4,-3! farbe dunkel
+  kreis -1 -36 4 farbe dunkel
+  linie 10,-40 22,10 breite 1.5 farbe dunkel
+  linie -110,18 -50,16 breite 1 farbe papier deckkraft 0.8
+  linie 60,15 110,17 breite 1 farbe papier deckkraft 0.8
+
+; ufer vorne links, rahmt den blick
+form -10,610! -10,548 70,540 160,556 240,585 290,610! farbe tanne+20 deckkraft 0.8 nass
+wiederhole i 12
+  linie 10+i*14+zuf(0,6),590 6+i*15+zuf(-12,12),470+zuf(0,80) breite 2.5..0.4 farbe tanne deckkraft 0.85

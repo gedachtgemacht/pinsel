@@ -1,0 +1,119 @@
+pinsel 1 800 600
+stil aquarell
+seed 23
+licht oben-rechts kraft 0.35
+farbe himmel 1c2630
+farbe see 163a44
+farbe gischt e8f2f2
+farbe fels 3a3532
+farbe lampe ffe8a0
+hintergrund verlauf 0e141c 26343e 3d4c52 90
+
+; sturmwolken
+vorlage wolke b=160 c=#2e3a44 hell=#4a5862
+  ellipse 0 0 b b*0.35 farbe c weich 14 flach
+  ellipse -b*0.45 b*0.05 b*0.55 b*0.28 farbe c weich 12 flach
+  ellipse b*0.4 -b*0.05 b*0.5 b*0.3 farbe hell deckkraft 0.7 weich 16 flach
+  ellipse b*0.1 -b*0.18 b*0.45 b*0.22 farbe hell deckkraft 0.6 weich 18 flach
+streue wolke 14 bereich -100 -40 1000 260 skala 0.7..1.5
+ellipse 300 60 420 90 farbe 0e141c deckkraft 0.5 weich 30 flach
+
+; blitz in der ferne
+linie 160,0 178,60 160,72 192,140 174,150 205,232 ecken breite 14 farbe c8d8ff deckkraft 0.5 weich 8
+linie 160,0 178,60 160,72 192,140 174,150 205,232 ecken breite 4..1.5 farbe ffffff
+linie 192,140 214,168 210,190 ecken breite 1.2..0.3 farbe ffffff deckkraft 0.8
+ellipse 190 120 160 120 farbe 9fb4e0 deckkraft 0.18 weich 40 flach
+
+; lichtkegel
+ellipse 260 150 260 50 farbe d8d0a8 deckkraft 0.18 weich 30 flach
+form 538,150! -40,40! -40,250! 538,162! ecken verlauf 3d4c52 fff2c0 0 deckkraft 0.6 weich 10 flach
+form 538,153! -40,110! -40,180! 538,159! ecken verlauf 8a9080 fff8dc 0 deckkraft 0.7 weich 4 flach
+form 542,150! 820,120! 820,190! 542,162! ecken farbe fff2c0 deckkraft 0.12 weich 8 flach
+
+; meer
+form -10,352! 810,352! 810,610! -10,610! verlauf 22444c see 0c2228 90 flach textur striche 3 texturfarbe 2e5a62
+  ellipse 240 360 300 30 farbe 9aa890 deckkraft 0.3 weich 14
+
+vorlage welle w=120 c=#1d4a55 h=#3a6a74 d=#0e2a32 s=#e8f2f2
+  form -w,0! -w*0.45,-w*0.14 0,-w*0.34 w*0.22,-w*0.3 w*0.45,-w*0.12 w,0! verlauf h c d 90
+    form -w*0.1,-w*0.36 w*0.2,-w*0.32 w*0.15,-w*0.1 -w*0.1,-w*0.05 farbe d deckkraft 0.4 weich 3
+  linie -w*0.5,-w*0.12 -w*0.2,-w*0.28 0,-w*0.34 w*0.22,-w*0.3 w*0.42,-w*0.14 breite w*0.07..1 farbe s deckkraft 0.85
+  linie -w*0.3,-w*0.1 0,-w*0.16 w*0.3,-w*0.06 breite w*0.02 farbe s deckkraft 0.4
+  kreis w*0.3 -w*0.32 w*0.05 farbe s deckkraft 0.6 weich 2 flach
+  kreis w*0.4 -w*0.24 w*0.03 farbe s deckkraft 0.5 weich 2 flach
+
+; ferne wellenreihen
+streue welle 40 bereich -40 360 880 70 skala 0.25..0.5 tiefe c=#24505a h=#3a6670 d=#163a42 s=#b8c8c8
+
+; schaumstreifen
+wiederhole i 22
+  linie 380+sin(i*77)*400,372+i*4 440+sin(i*77)*400,372+i*4+1 breite 1.5 farbe b8c8c8 deckkraft 0.3
+; fels mit leuchtturm
+teil insel 560 0
+  form -170,430! -130,380 -95,360! -60,330! -20,318! 30,320! 70,338! 110,356! 150,392 200,440! 215,480 180,505! 60,495 -60,505! -150,490 -185,470 farbe fels textur schraffur 3 texturfarbe fels-25 schatten
+    form -60,330 -20,318 30,320 10,360 -40,370 farbe fels+18 deckkraft 0.7
+    linie -100,370 -60,390 -30,420 breite 3 farbe fels-35
+    linie 40,340 70,380 60,430 breite 3 farbe fels-35
+    linie 120,380 140,430 breite 2 farbe fels-35
+    form 70,338 110,356 150,392 200,440 215,480 180,505 120,500 100,400 farbe fels-20 deckkraft 0.7
+  ; wärterhaus
+  rechteck 40 288 70 44 farbe c8c0b0 textur korn 2
+    rechteck 40 288 70 8 farbe 8a8478 deckkraft 0.5
+  form 34,290! 75,262! 116,290! ecken farbe 7a2e28
+  rechteck 58 302 14 16 farbe ffd27a flach
+    linie 65,302 65,318 breite 1.5 farbe 5a4030
+  kreis 65 310 24 farbe ffd27a deckkraft 0.25 weich 10 flach
+  ; turm
+  form -42,330! 42,330! 30,170! -30,170! ecken farbe f0ece4 textur korn 2 schatten
+    rechteck -60 290 120 40 farbe b8322c
+    rechteck -60 230 120 30 farbe b8322c
+    rechteck -60 175 120 25 farbe b8322c
+    form 10,170 30,170 42,330 18,330 farbe 101820 deckkraft 0.35
+    rechteck -6 255 12 18 farbe 2a2420
+    rechteck -5 205 10 14 farbe ffd27a flach
+  ; galerie
+  rechteck -40 162 80 10 farbe 2a2a2e rund 2
+  linie -38,150 38,150 breite 2 farbe 2a2a2e
+  wiederhole i 9
+    linie -36+i*9,150 -36+i*9,162 breite 1.4 farbe 2a2a2e
+  ; laterne
+  kreis 0 140 70 farbe lampe deckkraft 0.35 weich 30 flach
+  rechteck -20 118 40 36 farbe lampe flach
+    kreis 0 136 12 farbe ffffff weich 4
+    linie -7,118 -7,154 breite 2 farbe 3a3030
+    linie 7,118 7,154 breite 2 farbe 3a3030
+  form -24,119! 24,119! 18,108 0,98 -18,108 farbe 2a2a2e
+  linie 0,98 0,86 breite 2..1 farbe 2a2a2e
+  kreis 0 85 2.5 farbe 2a2a2e
+
+; gischt am felsen
+vorlage spritzer r=30
+  kreis 0 0 r farbe gischt deckkraft 0.5 weich r*0.3 flach
+  kreis -r*0.6 r*0.2 r*0.6 farbe gischt deckkraft 0.6 weich r*0.2 flach
+  kreis r*0.5 r*0.3 r*0.5 farbe ffffff deckkraft 0.7 weich r*0.15 flach
+streue spritzer 9 bereich 380 340 90 90 skala 0.4..1
+streue spritzer 5 bereich 395 290 50 60 skala 0.3..0.6
+streue spritzer 7 bereich 720 400 90 60 skala 0.3..0.8
+wiederhole i 60
+  kreis 360+zuf(0,140) 270+zuf(0,140) zuf(1,3) farbe ffffff deckkraft zuf(0.5,0.9) flach
+
+; nahe wellen
+streue welle 18 bereich -60 455 900 70 skala 0.7..1.1 tiefe c=#1a4650 h=#3a7078 d=#0c2a30 s=#dfeeee
+
+; große brecherwelle vorne links
+form -20,600! -20,470 60,420 160,385 250,380 320,400 350,430 330,450 300,436 270,440 290,470 340,520 420,560 500,600! verlauf 2e6670 1a4a54 0c262c 90 schatten textur striche 4 texturfarbe 3a7a80
+  form 160,385 250,380 320,400 350,430 330,450 300,436 270,440 240,410 180,400 farbe 6aa0a0 deckkraft 0.5 weich 6
+  linie 0,520 100,480 200,470 280,480 breite 3 farbe gischt deckkraft 0.4
+  linie 20,570 140,530 260,530 380,560 breite 3 farbe gischt deckkraft 0.35
+linie 60,420 160,385 250,380 320,400 350,430 330,450 300,436 breite 14..3 farbe gischt deckkraft 0.9
+streue spritzer 8 bereich 260 350 100 60 skala 0.3..0.7
+wiederhole i 40
+  kreis 240+zuf(0,150) 330+zuf(0,90) zuf(1,2.5) farbe ffffff deckkraft 0.8 flach
+form 420,600! 520,560 640,545 760,555 820,575 820,610! farbe 0e2a30
+  linie 500,575 620,560 760,565 breite 4 farbe gischt deckkraft 0.5
+
+; regen
+vorlage tropfen l=22
+  linie 0,0 -l*0.35,l breite 1.2 farbe c8d4dc deckkraft 0.45
+streue tropfen 320 bereich 0 -20 820 640 skala 0.6..1.4
+rechteck 0 0 800 600 farbe 0a1218 deckkraft 0.12 flach

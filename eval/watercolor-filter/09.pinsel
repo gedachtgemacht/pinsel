@@ -1,0 +1,105 @@
+pinsel 1 800 600
+stil aquarell
+seed 9
+licht links kraft 0.4
+hintergrund verlauf 5f86c0 9cb8da e8d2c4 ffd6a0 90
+
+; sonne knapp ueber dem horizont
+kreis 120 360 260 farbe ffc880 weich 90 deckkraft 0.45 flach
+kreis 120 360 90 farbe ffe0a8 weich 40 deckkraft 0.6 flach
+kreis 120 360 30 radial fffbe8 ffe8b0 flach
+
+; schleierwolken
+ellipse 260 250 220 10 farbe ffe4d0 weich 8 deckkraft 0.5 flach
+ellipse 600 200 260 12 farbe ffe8dc weich 10 deckkraft 0.4 flach
+ellipse 480 300 200 7 farbe ffd8c0 weich 6 deckkraft 0.5 flach
+ellipse 720 290 140 8 farbe ffdcc8 weich 6 deckkraft 0.4 flach
+ellipse 180 110 180 9 farbe ffffff weich 10 deckkraft 0.25 flach
+
+; ferne huegel
+form -20,372 80,352 200,360 330,345 460,358 600,340 720,352 820,348 820,380 -20,380 farbe 9aa0b8 flach
+form -20,376 120,366 260,370 420,360 560,368 700,362 820,368 820,384 -20,384 farbe 8a9a9a flach
+
+; felder in perspektive
+rechteck 0 368 800 232 farbe 6a8a3a flach
+wiederhole r 6
+  wiederhole c 15
+    form 400+(c-7+sin(r*77)*0.5)*(70+r*r*6+r*14)*0.9,370+r*r*6+r*14 400+(c-6+sin(r*77)*0.5)*(70+r*r*6+r*14)*0.9,370+r*r*6+r*14 400+(c-6+sin(r*77)*0.5)*(70+(r+1)*(r+1)*6+(r+1)*14)*0.9,370+(r+1)*(r+1)*6+(r+1)*14 400+(c-7+sin(r*77)*0.5)*(70+(r+1)*(r+1)*6+(r+1)*14)*0.9,370+(r+1)*(r+1)*6+(r+1)*14 ecken farbe 6c9a36-zuf(0,25) flach
+    form 400+(c-7+sin(r*77)*0.5)*(70+r*r*6+r*14)*0.9,370+r*r*6+r*14 400+(c-6+sin(r*77)*0.5)*(70+r*r*6+r*14)*0.9,370+r*r*6+r*14 400+(c-6+sin(r*77)*0.5)*(70+(r+1)*(r+1)*6+(r+1)*14)*0.9,370+(r+1)*(r+1)*6+(r+1)*14 400+(c-7+sin(r*77)*0.5)*(70+(r+1)*(r+1)*6+(r+1)*14)*0.9,370+(r+1)*(r+1)*6+(r+1)*14 ecken farbe e8c45a deckkraft zuf(0,0.9) flach
+    form 400+(c-7+sin(r*77)*0.5)*(70+r*r*6+r*14)*0.9,370+r*r*6+r*14 400+(c-6+sin(r*77)*0.5)*(70+r*r*6+r*14)*0.9,370+r*r*6+r*14 400+(c-6+sin(r*77)*0.5)*(70+(r+1)*(r+1)*6+(r+1)*14)*0.9,370+(r+1)*(r+1)*6+(r+1)*14 400+(c-7+sin(r*77)*0.5)*(70+(r+1)*(r+1)*6+(r+1)*14)*0.9,370+(r+1)*(r+1)*6+(r+1)*14 ecken farbe 9a6a40 deckkraft zuf(0,0.5) rand 4a5a2a 1.5 flach
+
+; ackerfurchen zum fluchtpunkt
+wiederhole i 80
+  linie 400+(i-40)*6,372 400+(i-40)*60,650 breite 1 farbe 3a4a20 deckkraft 0.12
+
+; hecken mit langen schatten nach rechts
+vorlage baum
+  ellipse 14 2 18 3 farbe 2a3a20 deckkraft 0.5 weich 1 flach
+  linie 0,0 0,-6 breite 2 farbe 3a2a1a
+  kreis 0 -10 7 farbe 3a5a28+z*15
+  kreis -3 -12 4 farbe 6a8a3a deckkraft 0.6 flach
+streue baum 30 entlang 0,390 300,392 800,388 skala 0.35..0.55
+streue baum 22 entlang 0,424 400,420 800,423 skala 0.5..0.8
+streue baum 14 entlang 0,470 400,466 800,470 skala 0.8..1.2
+streue baum 12 entlang 330,600 365,500 385,422 395,390 skala 0.5..1.6
+streue baum 8 entlang 760,600 600,520 470,440 skala 0.6..1.6
+
+; dorf am horizont
+teil dorf 190 382 skala 0.9
+  rechteck 0 -8 12 8 farbe e8d8c0
+  form -1,-8 6,-14 13,-8 ecken farbe a04a30
+  rechteck 16 -10 10 10 farbe f0e0c8
+  form 15,-10 21,-15 27,-10 ecken farbe 8a3a28
+  rechteck 30 -24 6 24 farbe e0d0b8
+  form 29,-24 33,-36 37,-24 ecken farbe 5a4a5a
+  rechteck 40 -7 14 7 farbe e8d8c0
+  form 39,-7 47,-12 55,-7 ecken farbe a04a30
+
+; morgennebel
+rechteck 0 360 800 40 verlauf ffe4c8 ffe4c8 90 weich 10 deckkraft 0.45 flach
+ellipse 250 410 300 14 farbe fff0e4 weich 12 deckkraft 0.5 flach
+ellipse 640 440 260 16 farbe fff0e4 weich 14 deckkraft 0.4 flach
+ellipse 120 470 200 12 farbe fff0e4 weich 12 deckkraft 0.3 flach
+ellipse 150 380 260 60 farbe ffd090 weich 30 deckkraft 0.3 flach
+
+; heissluftballon
+vorlage ballon c1=e83a2a c2=ffd040 c3=ffffff fl=0
+  linie -11,16 -9,40 breite 1 farbe 3a2a20
+  linie 11,16 9,40 breite 1 farbe 3a2a20
+  linie -4,16 -3,40 breite 1 farbe 3a2a20
+  linie 4,16 3,40 breite 1 farbe 3a2a20
+  kreis 0 24 10 farbe ffb030 weich 5 deckkraft fl flach
+  ellipse 0 26 3 6 farbe fff0a0 deckkraft fl flach
+  form 0,-140 42,-128 60,-90 55,-55 38,-20 16,4 -16,4 -38,-20 -55,-55 -60,-90 -42,-128 farbe c1
+    form 0,-141 -46,-128 -66,-90 -61,-55 -42,-20 -18,6 -10,6 -23,-20 -33,-55 -36,-90 -25,-128 farbe c2
+    form 0,-141 -8,-128 -12,-90 -11,-55 -8,-20 -3,6 3,6 8,-20 11,-55 12,-90 8,-128 farbe c2
+    form 0,-141 46,-128 66,-90 61,-55 42,-20 18,6 10,6 23,-20 33,-55 36,-90 25,-128 farbe c2
+    linie -62,-98 -30,-90 0,-88 30,-90 62,-98 breite 9 farbe c3
+    linie -62,-104 -30,-96 0,-94 30,-96 62,-104 breite 1.5 farbe c1-35
+    linie -62,-92 -30,-84 0,-82 30,-84 62,-92 breite 1.5 farbe c1-35
+    wiederhole i 7
+      linie (i-3)*9,-141 (i-3)*20,-90 (i-3)*7,4 breite 0.8 farbe 000000 deckkraft 0.15
+    ellipse 34 -70 40 90 farbe 2a1838 weich 18 deckkraft 0.35 flach
+    ellipse -30 -98 16 28 farbe ffffff weich 12 deckkraft 0.35 flach
+    ellipse -40 -60 20 50 farbe ffd090 weich 14 deckkraft 0.25 flach
+  form -16,4 16,4 11,16 -11,16 ecken farbe c1-30
+  rechteck -11 39 22 3 farbe 5a3a1a
+  rechteck -10 41 20 14 rund 2 farbe 9a6a34 textur schraffur 5 texturfarbe 5a3a1a
+
+; ferne ballons
+teil fern1 700 150 skala 0.32 deckkraft 0.75
+  nutze ballon 0 0 c1=6a3a9a c2=ffd040 c3=ffffff
+teil fern2 110 300 skala 0.28 deckkraft 0.7
+  nutze ballon 0 0 c1=2a8a5a c2=f0f0e0 c3=e83a2a
+teil fern3 380 345 skala 0.2 deckkraft 0.65
+  nutze ballon 0 0 c1=f08a20 c2=3a5ab0 c3=ffffff
+teil fern4 455 280 skala 0.4 deckkraft 0.85
+  nutze ballon 0 0 c1=2a6ac8 c2=ffffff c3=f0c020
+; mittlere
+teil mitte1 270 230 skala 0.85
+  nutze ballon 0 0 c1=1e4aa0 c2=f4f0e8 c3=e83a2a fl=0.5
+teil mitte2 430 130 skala 0.55 deckkraft 0.95
+  nutze ballon 0 0 c1=2a9a6a c2=f08a20 c3=ffffff
+; grosser ballon vorn
+teil vorn 600 310 skala 1.55
+  nutze ballon 0 0 c1=d8302a c2=ffc830 c3=ffffff fl=0.9

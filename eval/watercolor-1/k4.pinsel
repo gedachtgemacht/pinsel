@@ -1,0 +1,64 @@
+pinsel 1 800 600
+stil aquarell
+seed 14
+licht oben-rechts kraft 0.3
+farbe nacht 2c3870
+farbe veil 574a85
+farbe gold f2b04c
+farbe lampe ffe6b0
+farbe stein 7d82a8
+
+; himmel: schmaler streifen, heller als die mauern
+hintergrund verlauf 5a64a0 a7a4c8 d6cbd6 90
+
+; ferne: giebel am ende der gasse, blass und weich
+form 255,270! 275,236! 298,252! 322,226! 345,262! 345,372! 255,372! farbe veil+25 deckkraft 0.75 weich 3 flach
+ellipse 300 318 34 34 radial lampe gold+10 veil+25 weich 8 flach
+
+; linke hauszeile, schmal, im schatten
+form 0,0! 60,0! 70,30! 150,110! 160,90! 230,190! 255,215! 255,380! 0,560! farbe nacht-10 flach
+  form 0,0! 255,215! 255,380! 0,560! farbe veil deckkraft 0.3 weich 40
+  form 120,250! 150,262! 150,320! 120,310! farbe gold deckkraft 0.85
+  form 205,290! 220,296! 220,330! 205,326! farbe gold+15 deckkraft 0.7
+  linie 160,90 162,480 breite 3 farbe nacht-25 deckkraft 0.4
+
+; rechte hauszeile, nah, traegt das lampe
+form 800,0! 760,0! 740,50! 640,70! 620,40! 470,150! 460,135! 345,225! 345,380! 800,620! farbe nacht flach
+  form 800,0! 345,225! 345,380! 800,620! farbe veil deckkraft 0.25 weich 40
+  ; lichtschein der laterne auf der wand
+  ellipse 560 215 270 250 radial fff4da lampe gold d98a45 8a6a80 nacht nacht weich 30 flach
+  ; fenster, eins warm
+  form 690,300! 750,285! 750,400! 690,410! farbe nacht-20 deckkraft 0.55
+  form 400,275! 418,268! 418,320! 400,326! farbe gold deckkraft 0.9
+  linie 470,150 472,470 breite 3 farbe nacht-20 deckkraft 0.35
+  ; tuerbogen unten, dunkler akzent
+  form 600,470! 600,380 625,360 650,378 650,500! farbe nacht-30 deckkraft 0.7
+
+; gasse, nasses pflaster
+form 0,560! 255,375! 345,375! 800,620! 800,600! 0,600! verlauf stein+5 stein-30 nacht-5 90 flach
+  ; lampe faellt auf das pflaster
+  ellipse 545 480 240 70 radial lampe gold d98a45 stein-15 stein-25 weich 25 flach
+  ; spiegelung der laterne
+  linie 560,400 563,470 556,575 breite 20..3 farbe fff4da deckkraft 0.95 weich 4
+  linie 300,378 300,400 breite 5..1 farbe lampe deckkraft 0.5 weich 3
+  ; warme tupfer im nassen
+  linie 470,520 520,515 breite 3..1 farbe lampe deckkraft 0.6 weich 2
+  linie 600,545 660,552 breite 3..1 farbe lampe deckkraft 0.5 weich 2
+  linie 215,390 216,420 breite 4..1 farbe gold deckkraft 0.5 weich 3
+  ; wenige fugen vorn
+  linie 60,575 190,555 breite 2 farbe stein-40 deckkraft 0.35
+  linie 250,600 360,578 breite 2 farbe stein-40 deckkraft 0.3
+
+; laterne am wandarm (blickpunkt)
+linie 620,170 560,170 560,180 breite 3 farbe nacht-40
+form 547,183! 573,183! 578,232! 542,232! farbe fffaf0 rand nacht-40 2 flach
+form 542,183! 578,183! 560,172 farbe nacht-40 flach
+
+; kleine laterne links, fern
+ellipse 215 235 55 55 radial lampe gold nacht-5 nacht-10 nacht-10 weich 14 flach
+form 210,228! 220,228! 222,246! 208,246! farbe fff4da rand nacht-40 1.5 flach
+linie 240,222 215,222 215,228 breite 2 farbe nacht-40
+
+; eine figur gibt mass
+form 312,332 318,330 321,372 307,372 farbe nacht-35 deckkraft 0.8
+kreis 315 326 5 farbe nacht-35 deckkraft 0.8
